@@ -4,6 +4,7 @@
     {
 
         public int Id { get; set; }
+        public int tipo_producto { get; set; }
         public string nombre { get; set; }
         public string caracteristicas { get; set; }
         public int precio { get; set; }
@@ -12,10 +13,12 @@
         public imagen imagen3 { get; set; }
         public imagen imagen4 { get; set; }
         public imagen imagen5 { get; set; }
+        public int Descuento { get; set; }
         public int oferta { get; set; }
         public Productos()
         {
             Id = new int();
+            tipo_producto = new int();
             nombre = string.Empty;
             caracteristicas = string.Empty;
             precio = new int();
@@ -24,6 +27,7 @@
             imagen3 = new imagen();
             imagen4 = new imagen();
             imagen5 = new imagen();
+            Descuento = new int();
             oferta = new int();
         }
 

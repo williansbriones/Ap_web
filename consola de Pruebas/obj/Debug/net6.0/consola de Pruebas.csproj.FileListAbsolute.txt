@@ -1,0 +1,27 @@
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\api_proyecto_web.deps.json
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\api_proyecto_web.runtimeconfig.json
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\appsettings.json
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\api_proyecto_web.exe
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\consola de Pruebas.exe
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\consola de Pruebas.deps.json
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\consola de Pruebas.runtimeconfig.json
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\consola de Pruebas.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\consola de Pruebas.pdb
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\api_proyecto_web.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\api_proyecto_web.pdb
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.csproj.AssemblyReference.cache
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.AssemblyInfoInputs.cache
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.AssemblyInfo.cs
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.csproj.CoreCompileInputs.cache
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.csproj.CopyComplete
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\refint\consola de Pruebas.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.pdb
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.genruntimeconfig.cache
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\ref\consola de Pruebas.dll

@@ -11,22 +11,23 @@ namespace api_proyecto_web.Controllers
     [ApiController]
     public class Controller_compras : ControllerBase
     {
-        IcrudCompras<compras> compras = new ComprasServicios();
+        IcrudCompras<compras> servicio_compras = new ComprasServicios();
 
-
-        // GET: api/<Controller_compras>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+        
 
         // GET api/<Controller_compras>/5
-        [HttpGet("{id}",Name = "GetIndividual")]
-        public compras GetIndividual(int id)
+        [HttpGet("Ordenes_de_compra/{id_compra}")]
+        public compras GetIndividual(int id_compra)
         {
-            return compras.individual(id);
+            return servicio_compras.individual(id_compra);
         }
+
+        [HttpGet("Ordenes_de_clientes/{id_cliente}",Name ="GetCompras")]
+        public IList<compras> GetCompras(int id_cliente)
+        {
+            return servicio_compras.compras_cliente(id_cliente);
+        }
+
 
         // POST api/<Controller_compras>
         [HttpPost]
