@@ -25,3 +25,23 @@ C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\refint\consol
 C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.pdb
 C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.genruntimeconfig.cache
 C:\Users\willi\Desktop\Api_web\consola de Pruebas\obj\Debug\net6.0\ref\consola de Pruebas.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\Oracle.ManagedDataAccess.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\System.DirectoryServices.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\System.DirectoryServices.Protocols.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.DirectoryServices.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\linux\lib\net6.0\System.DirectoryServices.Protocols.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\osx\lib\net6.0\System.DirectoryServices.Protocols.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.DirectoryServices.Protocols.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll

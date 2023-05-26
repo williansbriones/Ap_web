@@ -15,6 +15,10 @@
         public imagen imagen5 { get; set; }
         public int Descuento { get; set; }
         public int oferta { get; set; }
+        public Cupon Cupon { get; set; }
+        public Ofertas Ofertas { get; set; }
+
+
         public Productos()
         {
             Id = new int();
@@ -29,6 +33,8 @@
             imagen5 = new imagen();
             Descuento = new int();
             oferta = new int();
+            Cupon = new Cupon();
+            Ofertas = new Ofertas();
         }
 
     }

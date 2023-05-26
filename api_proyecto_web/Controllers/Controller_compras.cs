@@ -19,13 +19,13 @@ namespace api_proyecto_web.Controllers
         [HttpGet("Ordenes_de_compra/{id_compra}")]
         public compras GetIndividual(int id_compra)
         {
-            return servicio_compras.individual(id_compra);
+            return servicio_compras.BusquedaCompraIndividual(id_compra);
         }
 
         [HttpGet("Ordenes_de_clientes/{id_cliente}",Name ="GetCompras")]
         public IList<compras> GetCompras(int id_cliente)
         {
-            return servicio_compras.compras_cliente(id_cliente);
+            return servicio_compras.BusquedaComprasCliente(id_cliente);
         }
 
 

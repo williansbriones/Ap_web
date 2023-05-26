@@ -1,4 +1,7 @@
-﻿namespace api_proyecto_web.Modelos
+﻿using api_proyecto_web.Modelos.@enum;
+using System.Xml.Schema;
+
+namespace api_proyecto_web.Modelos
 {
     public class compras
     {
@@ -9,8 +12,12 @@
         public IList<Productos> lista_productos { get; set; }
         public DateTime Fecha_compra { get; set; }
         public DateTime Fecha_entrega  { get; set; }
-        public EstadoCompra estado_compra { get; set;}
-
+        public EstadoCompra Estado_compra { get; set;}
+        public int Total { get; set; }
+        public int Descuento { get; set; }
+        public int CantidadProductos => this.lista_productos.Count;
+        
+        
         public compras()
         {
             this.id_compra = new int();
@@ -18,7 +25,9 @@
             this.lista_productos = new List<Productos>();
             this.Fecha_compra = DateTime.Now;
             this.Fecha_entrega = DateTime.Now.AddDays(3);
-            this.estado_compra = EstadoCompra.cancelado;
+            this.Estado_compra = EstadoCompra.cancelado;
+            this.Total = new int();
+            this.Descuento = new int();
         }
 
     }

@@ -2,64 +2,29 @@
 using api_proyecto_web.Modelos;
 using static System.Net.Mime.MediaTypeNames;
 
+using Oracle.ManagedDataAccess.Client;
 
- IList<Productos> ListaProducto = new List<Productos>();
-
-
-if (ListaProducto.Count == 0)
-{
-    Console.WriteLine("esta Vacia");
-}else
-{
-    Console.WriteLine("tiene Elementos");
-}
-
-ListaProducto.Add(new Productos
-{
-    Id = 2,
-    nombre = "core I7",
-    caracteristicas = "procesador",
-    precio = 700000,
-    imagen1 = new imagen(),
-    imagen2 = new imagen(),
-    imagen3 = new imagen(),
-    imagen4 = new imagen(),
-    imagen5 = new imagen(),
-    Descuento = 0,
-    oferta = 10,
-});
-ListaProducto.Add(new Productos
-{
-    Id = 3,
-    nombre = "GTX 1250 IT",
-    caracteristicas = "Tarjetas Graficas",
-    precio = 1200000,
-    imagen1 = new imagen(),
-    imagen2 = new imagen(),
-    imagen3 = new imagen(),
-    imagen4 = new imagen(),
-    imagen5 = new imagen(),
-    Descuento = 0,
-    oferta = 0,
-});
-ListaProducto.Add(new Productos
-{
-    Id = 3,
-    nombre = "GTX 1550 IT",
-    caracteristicas = "Tarjetas Graficas",
-    precio = 1200000,
-    imagen1 = new imagen(),
-    imagen2 = new imagen(),
-    imagen3 = new imagen(),
-    imagen4 = new imagen(),
-    imagen5 = new imagen(),
-    Descuento = 0,
-    oferta = 0,
-});
+string conString = "User Id=ADMIN;Password=ProgramacionWeb2023#; Data Source=n4jrb5b37b3i2h3f_high;"
+    + "connection timeout=30;";
 
 
-ListaProducto.RemoveAt(0);
-ListaProducto.RemoveAt(0);
-Console.WriteLine(ListaProducto[0].nombre);
+OracleConfiguration.TnsAdmin = "C:\\Users\\willi\\Desktop\\Api_web\\consola de Pruebas\\Wallet\\";
+OracleConfiguration.WalletLocation = OracleConfiguration.TnsAdmin;
 
-Console.WriteLine("--------------------------");
+
+OracleConnection connection = new OracleConnection(conString);
+OracleCommand command = connection.CreateCommand();
+
+connection.Open();
+
+
+command.CommandText = "select * from usuario";
+
+Console.WriteLine("la base de datos a sido actualizada");
+
+
+connection.Close();
+
+
+
+

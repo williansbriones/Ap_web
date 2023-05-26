@@ -4,16 +4,16 @@
     {
 
         public int id { get; set; }
-        public int id_usuario { get; set; }
+        public int IdTipoClase { get; set; }
 
-        public string nombre { get; set; }
+        public string Nombre { get; set; }
         public string URL { get; set; }
 
         public imagen()
         {
             id = new int();
-            id_usuario = new int();
-            nombre = string.Empty;
+            IdTipoClase = new int();
+            Nombre = string.Empty;
             URL = string.Empty;
         }
     }

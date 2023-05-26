@@ -1,4 +1,6 @@
-﻿namespace api_proyecto_web.Modelos
+﻿using api_proyecto_web.Modelos.@enum;
+
+namespace api_proyecto_web.Modelos
 {
     public class Usuario
     {

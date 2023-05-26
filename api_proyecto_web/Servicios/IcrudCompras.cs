@@ -5,8 +5,9 @@ namespace api_proyecto_web.Servicios
     public interface IcrudCompras<T>
     {
         //Crud
-        public T individual(int id_compra);
-        public IList<T> compras_cliente(int id_cliente);
+        public IList<T> BusquedaComprasCliente(int id_cliente);
+        public T BusquedaCompraIndividual(int id_compra);
+        
 
 
 

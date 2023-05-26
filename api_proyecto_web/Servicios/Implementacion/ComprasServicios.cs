@@ -1,4 +1,5 @@
 ﻿using api_proyecto_web.Modelos;
+using api_proyecto_web.Modelos.@enum;
 
 namespace api_proyecto_web.Servicios.Implementacion
 {
@@ -17,9 +18,9 @@ namespace api_proyecto_web.Servicios.Implementacion
                     lista_productos = new List<Productos>(),
                     Fecha_compra = DateTime.Now,
                     Fecha_entrega = DateTime.Now.AddDays(3),
-                    estado_compra = EstadoCompra.aceptado,
+                    Estado_compra = EstadoCompra.aceptado,
 
-                });//primara compra de la lista compra 
+                });//primera compra de la lista compra 
                 ListaCompras[0].lista_productos.Add(new Productos
                 {
                     Id = 1,
@@ -34,7 +35,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                     imagen5 = new imagen(),
                     Descuento = 5,
                     oferta = 0,
-                });//primer producto para la lista de productos (Core I5)
+                });//primer producto para la primera compra (Core I5)
                 ListaCompras.Add(new compras
                 {
                     id_compra = 2,
@@ -42,9 +43,9 @@ namespace api_proyecto_web.Servicios.Implementacion
                     lista_productos = new List<Productos>(),
                     Fecha_compra = DateTime.Now,
                     Fecha_entrega = DateTime.Now.AddDays(3),
-                    estado_compra = EstadoCompra.cancelado,
+                    Estado_compra = EstadoCompra.cancelado,
 
-                });//segunda compra de la lista compra
+                });//segunda compra de la "lista compra"
                 ListaCompras[1].lista_productos.Add(new Productos 
                 {
                     Id = 2,
@@ -58,7 +59,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                     imagen5 = new imagen(),
                     Descuento = 0,
                     oferta = 10,
-                });//segundo producto de la lista productos (Core I7)
+                });//segundo producto de la segunda lista compra (Core I7)
                 ListaCompras[1].lista_productos.Add(new Productos
                 {
                     Id = 1,
@@ -81,7 +82,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                     lista_productos = new List<Productos>(),
                     Fecha_compra = DateTime.Now,
                     Fecha_entrega = DateTime.Now.AddDays(3),
-                    estado_compra = EstadoCompra.empacado,
+                    Estado_compra = EstadoCompra.empacado,
 
                 });//tercera compra de la lista compra
                 ListaCompras[2].lista_productos.Add(new Productos
@@ -100,9 +101,10 @@ namespace api_proyecto_web.Servicios.Implementacion
                 });//tercer Producto de la lista de productos (GTX 1250 IT)
             }
         }
-        IList<compras> IcrudCompras<compras>.compras_cliente(int id_cliente)//metodo para obtener las compras de un cliente en especifico
+        IList<compras> IcrudCompras<compras>.BusquedaComprasCliente(int id_cliente)//metodo para obtener las compras de un cliente en especifico
         {
             IList<compras> ComprasCliente = new List<compras>();
+
             foreach (compras com in ListaCompras)
             {
                 if (com.id_usuario == id_cliente)
@@ -114,7 +116,7 @@ namespace api_proyecto_web.Servicios.Implementacion
             return ComprasCliente;
         }
 
-        compras IcrudCompras<compras>.individual(int id_compra)//metodo para obtener una compra en especifico
+        compras IcrudCompras<compras>.BusquedaCompraIndividual(int id_compra)//metodo para obtener una compra en especifico
         {
             compras Compra_individual = new compras();
             foreach (compras compra in ListaCompras)
@@ -122,6 +124,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                 if (compra.id_compra == id_compra)
                 {
                     Compra_individual = compra;
+                    break;
                 }
                     
             }
