@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using api_proyecto_web.Modelos;
+using api_proyecto_web.Servicios;
+using api_proyecto_web.Servicios.Implementacion;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,11 +11,15 @@ namespace api_proyecto_web.Controllers
     [ApiController]
     public class Controller_usuario : ControllerBase
     {
+        IcrudUsuario usuario = new UsuarioServicio();
+
+
         // GET: api/<Controller_usuario>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        [HttpGet("InformacionUsuario")]
+        public Usuario Get()
         {
-            return new string[] { "value1", "value2" };
+
+            return usuario.informacionUsuario();
         }
 
         // GET api/<Controller_usuario>/5
@@ -29,9 +36,10 @@ namespace api_proyecto_web.Controllers
         }
 
         // PUT api/<Controller_usuario>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("CambioContraseña")]
+        public void Put([FromBody] string contraseña)
         {
+            usuario.CambiarContraseña(contraseña);
         }
 
         // DELETE api/<Controller_usuario>/5

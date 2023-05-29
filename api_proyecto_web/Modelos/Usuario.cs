@@ -12,6 +12,7 @@ namespace api_proyecto_web.Modelos
         public string Email { get; set; }
         public string Direccion { get; set; }
         public IList<compras> Lista_compras { get; set; }
+        public string Contraseña { get; set; }
 
         public Usuario()
         {
@@ -23,6 +24,7 @@ namespace api_proyecto_web.Modelos
             this.Email = string.Empty;
             this.Direccion = string.Empty;
             this.Lista_compras = new List<compras>();
+            this.Contraseña = string.Empty;
         }
 
 

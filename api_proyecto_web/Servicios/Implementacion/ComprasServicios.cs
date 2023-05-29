@@ -6,10 +6,18 @@ namespace api_proyecto_web.Servicios.Implementacion
     public class ComprasServicios : IcrudCompras<compras>
     {
         static IList<compras> ListaCompras = new List<compras>();//creacion de una lista de compras
+        static Ofertas Ofertas = new Ofertas();
         public ComprasServicios() //Poblacion de la lista de compras "ListaCompras"
         {
             
-         if (ListaCompras.Count == 0) { 
+         if (ListaCompras.Count == 0) {
+
+                Ofertas.Nombre = "procesadores descuento";
+                Ofertas.Id = 1;
+                Ofertas.CantidadDescuento = 24000;
+                Ofertas.Estado = true;
+                Ofertas.FechaInicio = DateTime.Now;
+                Ofertas.FechaTermino = DateTime.Now;
 
                 ListaCompras.Add(new compras
                 {
@@ -33,9 +41,9 @@ namespace api_proyecto_web.Servicios.Implementacion
                     imagen3 = new imagen(),
                     imagen4 = new imagen(),
                     imagen5 = new imagen(),
-                    Descuento = 5,
-                    oferta = 0,
-                });//primer producto para la primera compra (Core I5)
+                    Cupon = new Cupon(),
+                    Ofertas = Ofertas,
+                }); ;//primer producto para la primera compra (Core I5)
                 ListaCompras.Add(new compras
                 {
                     id_compra = 2,
@@ -57,9 +65,9 @@ namespace api_proyecto_web.Servicios.Implementacion
                     imagen3 = new imagen(),
                     imagen4 = new imagen(),
                     imagen5 = new imagen(),
-                    Descuento = 0,
-                    oferta = 10,
-                });//segundo producto de la segunda lista compra (Core I7)
+                    Cupon = new Cupon(),
+                    Ofertas = Ofertas,
+                });//primer producto de la segunda compra lista compra (Core I7)
                 ListaCompras[1].lista_productos.Add(new Productos
                 {
                     Id = 1,
@@ -72,9 +80,9 @@ namespace api_proyecto_web.Servicios.Implementacion
                     imagen3 = new imagen(),
                     imagen4 = new imagen(),
                     imagen5 = new imagen(),
-                    Descuento = 5,
-                    oferta = 0,
-                });//primer producto para la lista de productos (Core I5)
+                    Cupon = new Cupon(),
+                    Ofertas = Ofertas,
+                });//segundo producto de la segunda lista compra compra (Core I5)
                 ListaCompras.Add(new compras
                 {
                     id_compra = 3,
@@ -84,7 +92,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                     Fecha_entrega = DateTime.Now.AddDays(3),
                     Estado_compra = EstadoCompra.empacado,
 
-                });//tercera compra de la lista compra
+                });//tercera compra de la "lista compra"
                 ListaCompras[2].lista_productos.Add(new Productos
                 {
                     Id = 3,
@@ -96,9 +104,10 @@ namespace api_proyecto_web.Servicios.Implementacion
                     imagen3 = new imagen(),
                     imagen4 = new imagen(),
                     imagen5 = new imagen(),
-                    Descuento = 0,
-                    oferta = 0,
-                });//tercer Producto de la lista de productos (GTX 1250 IT)
+                    Cupon = new Cupon(),
+                    Ofertas = new Ofertas(),
+                });//primer producto de la tercera compra lista compra (GTX 1250 IT)
+
             }
         }
         IList<compras> IcrudCompras<compras>.BusquedaComprasCliente(int id_cliente)//metodo para obtener las compras de un cliente en especifico
