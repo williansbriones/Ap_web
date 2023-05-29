@@ -14,7 +14,7 @@ namespace api_proyecto_web.Servicios.Implementacion
 
                 Ofertas.Nombre = "procesadores descuento";
                 Ofertas.Id = 1;
-                Ofertas.CantidadDescuento = 24000;
+                Ofertas.CantidadDescuento = 10;
                 Ofertas.Estado = true;
                 Ofertas.FechaInicio = DateTime.Now;
                 Ofertas.FechaTermino = DateTime.Now;

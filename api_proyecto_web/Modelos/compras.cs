@@ -14,7 +14,7 @@ namespace api_proyecto_web.Modelos
         public DateTime Fecha_entrega { get; set; }
         public EstadoCompra Estado_compra { get; set; }
         public int Total => lista_productos.Sum(x => x.precio);
-        public int Descuento => lista_productos.Sum(x => x.Ofertas.CantidadDescuento);
+        public int Descuento => this.Total*(lista_productos.Sum(x => x.Ofertas.CantidadDescuento)/100);
         public int SubTotal => this.Total-this.Descuento;
         public int CantidadProductos => this.lista_productos.Count;
         

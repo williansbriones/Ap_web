@@ -15,10 +15,9 @@ namespace api_proyecto_web.Controllers
 
 
         // GET: api/<Controller_usuario>
-        [HttpGet("InformacionUsuario")]
+        [HttpGet("InformacionUsuario")] //controller lo unico que realiza en la obtencion de datos
         public Usuario Get()
         {
-
             return usuario.informacionUsuario();
         }
 
