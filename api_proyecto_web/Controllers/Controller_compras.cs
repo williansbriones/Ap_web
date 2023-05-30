@@ -21,7 +21,7 @@ namespace api_proyecto_web.Controllers
         {
             return servicio_compras.BusquedaCompraIndividual(id_compra);
         }
-
+        //get
         [HttpGet("Ordenes_de_clientes/{id_cliente}",Name ="GetCompras")]
         public IList<compras> GetCompras(int id_cliente)
         {
