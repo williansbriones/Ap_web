@@ -11,7 +11,7 @@ namespace api_proyecto_web.Controllers
     [ApiController]
     public class Controller_usuario : ControllerBase
     {
-        IcrudUsuario usuario = new UsuarioServicio();
+        Servicios.UsuarioServicio usuario = new Servicios.Implementacion.UsuarioServicio();
 
 
         // GET: api/<Controller_usuario>

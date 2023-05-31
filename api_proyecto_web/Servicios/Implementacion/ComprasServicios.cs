@@ -6,12 +6,12 @@ namespace api_proyecto_web.Servicios.Implementacion
     public class ComprasServicios : IcrudCompras<compras>
     {
         static IList<compras> ListaCompras = new List<compras>();//creacion de una lista de compras
-        static Ofertas Ofertas = new Ofertas();
+        static Ofertas Ofertas = new Ofertas();//Oferta
+        
         public ComprasServicios() //Poblacion de la lista de compras "ListaCompras"
         {
             
-         if (ListaCompras.Count == 0) {
-
+            if (ListaCompras.Count == 0) {
                 Ofertas.Nombre = "procesadores descuento";
                 Ofertas.Id = 1;
                 Ofertas.CantidadDescuento = 10;
@@ -139,6 +139,23 @@ namespace api_proyecto_web.Servicios.Implementacion
             }
 
             return Compra_individual;
+        }
+
+        public IList<compras> BusquedaComprasClienteIniciado()
+        {
+            IList<compras> ComprasCliente = new List<compras>();
+
+
+
+            foreach (compras com in ListaCompras)
+            {
+                if (com.id_usuario == UsuarioServicio.UsuarioIniciado.Id)
+                {
+                    ComprasCliente.Add(com);
+                }
+            }
+
+            return ComprasCliente;
         }
     }
 }
