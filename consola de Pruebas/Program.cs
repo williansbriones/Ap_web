@@ -1,19 +1,18 @@
-﻿using api_proyecto_web.Modelos;
-using api_proyecto_web.Modelos.@enum;
-using api_proyecto_web.Servicios;
-using api_proyecto_web.Servicios.Implementacion;
-using UsuarioServicio = api_proyecto_web.Servicios.Implementacion.UsuarioServicio;
+﻿
+using api_proyecto_web.DBConText;
+using System.Data;
 
-internal class Program
-{
+api_proyecto_web.DBConText.Connection db = new api_proyecto_web.DBConText.Connection();
 
-    public static void Main(string[] args)
-    {
-        
-       
-
-        Console.WriteLine("El id es "+UsuarioServicio.UsuarioIniciado.Id);
+db = new api_proyecto_web.DBConText.Connection("User Id=ADMIN;Password=ProgramacionWeb2023#;Data Source=r7dbt8zx2wqrpwgt_high;"
+                          + "Connection Timeout=30;");
 
 
-    }
-}
+string Query = string.Format(@"select id_estado_compra, nombre from estado_compra");
+
+DataTable dt = db.Execute(Query);
+Console.WriteLine(dt.Columns);
+Console.WriteLine(dt);
+Console.WriteLine("Select ejecutado");
+
+

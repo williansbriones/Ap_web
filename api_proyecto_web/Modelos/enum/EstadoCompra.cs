@@ -2,12 +2,12 @@
 {
     public enum EstadoCompra
     {
-        cancelado = 0,
-        carro_de_compra = 1,
-        aceptado = 2,
-        empacado = 3,
-        enviado = 4,
-        recivido = 5,
+        Cancelado = 0,
+        Carro_de_compra = 1,
+        Aceptado = 2,
+        Empacado = 3,
+        Enviado = 4,
+        Recivido = 5,
 
 
     }

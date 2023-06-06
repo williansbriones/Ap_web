@@ -13,7 +13,7 @@ namespace api_proyecto_web.Controllers
     {
         IcrudCompras<compras> servicio_compras = new ComprasServicios();
 
-
+        //get
         [HttpGet("OrdenesDeCompraClienteIniciado")]
         public IList<compras> ComprasDeUsuariosIniciado()
         {

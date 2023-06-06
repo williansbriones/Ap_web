@@ -26,7 +26,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                     lista_productos = new List<Productos>(),
                     Fecha_compra = DateTime.Now,
                     Fecha_entrega = DateTime.Now.AddDays(3),
-                    Estado_compra = EstadoCompra.aceptado,
+                    Estado_compra = EstadoCompra.Aceptado,
 
                 });//primera compra de la lista compra 
                 ListaCompras[0].lista_productos.Add(new Productos
@@ -51,7 +51,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                     lista_productos = new List<Productos>(),
                     Fecha_compra = DateTime.Now,
                     Fecha_entrega = DateTime.Now.AddDays(3),
-                    Estado_compra = EstadoCompra.cancelado,
+                    Estado_compra = EstadoCompra.Cancelado,
 
                 });//segunda compra de la "lista compra"
                 ListaCompras[1].lista_productos.Add(new Productos 
@@ -90,7 +90,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                     lista_productos = new List<Productos>(),
                     Fecha_compra = DateTime.Now,
                     Fecha_entrega = DateTime.Now.AddDays(3),
-                    Estado_compra = EstadoCompra.empacado,
+                    Estado_compra = EstadoCompra.Empacado,
 
                 });//tercera compra de la "lista compra"
                 ListaCompras[2].lista_productos.Add(new Productos
@@ -116,8 +116,34 @@ namespace api_proyecto_web.Servicios.Implementacion
 
             foreach (compras com in ListaCompras)
             {
+                float Porcentaje = 0;
+                int Descuento = 0;
+                int DescuentoTotal = 0;
                 if (com.id_usuario == id_cliente)
                 {
+                    foreach (Productos pro in com.lista_productos)
+                    {
+                        if (pro.Ofertas.CantidadDescuento > 0)
+                        {
+                            Porcentaje = (float)(pro.Ofertas.CantidadDescuento / 100.000);
+                            Descuento = (int)((float)(pro.precio * Porcentaje));
+                            DescuentoTotal = DescuentoTotal + Descuento;
+                        }
+                        if (pro.Cupon.CantidadDesuento > 0)
+                        {
+                            Porcentaje = (float)(pro.Cupon.CantidadDesuento / 100.000);
+                            Descuento = (int)((float)(pro.precio * Porcentaje));
+                            DescuentoTotal = DescuentoTotal + Descuento;
+
+                        }
+
+                        
+                    }
+
+
+
+                    com.Descuento = DescuentoTotal;
+                    com.SubTotal = com.Total - DescuentoTotal;
                     ComprasCliente.Add(com);
                 }
             }
@@ -127,12 +153,35 @@ namespace api_proyecto_web.Servicios.Implementacion
 
         compras IcrudCompras<compras>.BusquedaCompraIndividual(int id_compra)//metodo para obtener una compra en especifico
         {
+            float Porcentaje = 0;
+            int Descuento = 0;
+            int DescuentoTotal = 0;
             compras Compra_individual = new compras();
-            foreach (compras compra in ListaCompras)
+            foreach (compras com in ListaCompras)
             {
-                if (compra.id_compra == id_compra)
+                if (com.id_compra == id_compra)
                 {
-                    Compra_individual = compra;
+                    foreach (Productos pro in com.lista_productos)
+                    {
+                        if (pro.Ofertas.CantidadDescuento > 0)
+                        {
+                            Porcentaje = (float)(pro.Ofertas.CantidadDescuento / 100.000);
+                            Descuento = (int)((float)(pro.precio * Porcentaje));
+                            DescuentoTotal = DescuentoTotal + Descuento;
+                        }
+                        if (pro.Cupon.CantidadDesuento > 0)
+                        {
+                            Porcentaje = (float)(pro.Cupon.CantidadDesuento / 100.000);
+                            Descuento = (int)((float)(pro.precio * Porcentaje));
+                            DescuentoTotal = DescuentoTotal + Descuento;
+
+                        }
+
+
+                    }
+                    com.Descuento = DescuentoTotal;
+                    com.SubTotal = com.Total - DescuentoTotal;
+                    Compra_individual = com;
                     break;
                 }
                     

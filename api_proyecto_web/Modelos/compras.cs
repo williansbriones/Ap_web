@@ -14,8 +14,8 @@ namespace api_proyecto_web.Modelos
         public DateTime Fecha_entrega { get; set; }
         public EstadoCompra Estado_compra { get; set; }
         public int Total => lista_productos.Sum(x => x.precio);
-        public int Descuento => this.Total*(lista_productos.Sum(x => x.Ofertas.CantidadDescuento)/100);
-        public int SubTotal => this.Total-this.Descuento;
+        public int Descuento { get; set; }
+        public int SubTotal { get; set; }
         public int CantidadProductos => this.lista_productos.Count;
         
         
@@ -26,7 +26,9 @@ namespace api_proyecto_web.Modelos
             this.lista_productos = new List<Productos>();
             this.Fecha_compra = DateTime.Now;
             this.Fecha_entrega = DateTime.Now.AddDays(3);
-            this.Estado_compra = EstadoCompra.cancelado;
+            this.Estado_compra = EstadoCompra.Cancelado;
+            this.SubTotal = 0;
+            this.Descuento = 0;
         }
 
     }

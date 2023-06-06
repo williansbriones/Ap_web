@@ -8,23 +8,26 @@ ProgramacionWeb2023#
 
 using Oracle.ManagedDataAccess.Client;
 
-string conString = "User Id=ADMIN;Password=ProgramacionWeb2023#; Data Source=n4jrb5b37b3i2h3f_high;"
-    + "connection timeout=30;";
+
+string ConString = "User Id=ADMIN;Password=ProgramacionWeb2023#;Data Source=r7dbt8zx2wqrpwgt_high;"
+                          + "Connection Timeout=30;";
 
 
-OracleConfiguration.TnsAdmin = "C:\\Users\\willi\\Desktop\\Api_web\\consola de Pruebas\\Wallet\\";
+OracleConfiguration.TnsAdmin = "..\\..\\..\\..\\consola de Pruebas\\Wallet\\";
 OracleConfiguration.WalletLocation = OracleConfiguration.TnsAdmin;
 
+OracleConnection Conection = new OracleConnection(ConString);
+OracleCommand command = Conection.CreateCommand();
 
-OracleConnection connection = new OracleConnection(conString);
-OracleCommand command = connection.CreateCommand();
+Conection.Open();
 
-connection.Open();
+command.CommandText = "select id_estado_compra, nombre from estado_compra";
+OracleDataReader reader = command.ExecuteReader();
+while (reader.Read()) {
 
+    Console.WriteLine(reader.GetInt32(0)+" - "+reader.GetString(1));
+}
 
-command.CommandText = "select * from usuario";
+Console.WriteLine("la base de datos esta activa");
 
-Console.WriteLine("la base de datos a sido actualizada");
-
-
-connection.Close();
+Conection.Close();

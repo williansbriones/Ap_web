@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "GzIfdZJ1i/urH7ObLPqFwEh6Skzg7+TTW/xK6kM6+QUAW7VrLjbelghsrzHR9k+uolP5jYP2C8J96kbSTr4a5A==",
+  "dgSpecHash": "Z8fVJFEZjoPhDzy4UzbGJjnIXxJX92GXFEUkqiWGgvSufd6WrE0BAzY/o7XJpbCp7lN8NJK7ALmCA4IAtZShig==",
   "success": true,
   "projectFilePath": "C:\\Users\\willi\\Desktop\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\willi\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\oracle.manageddataaccess\\21.10.0\\oracle.manageddataaccess.21.10.0.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\oracle.manageddataaccess.core\\3.21.100\\oracle.manageddataaccess.core.3.21.100.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
@@ -17,10 +18,24 @@
     "C:\\Users\\willi\\.nuget\\packages\\system.directoryservices\\6.0.1\\system.directoryservices.6.0.1.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\system.directoryservices.protocols\\6.0.1\\system.directoryservices.protocols.6.0.1.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\system.text.json\\6.0.1\\system.text.json.6.0.1.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"Oracle.ManagedDataAccess 21.10.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "Oracle.ManagedDataAccess",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
