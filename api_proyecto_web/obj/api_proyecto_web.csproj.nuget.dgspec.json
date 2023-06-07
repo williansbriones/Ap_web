@@ -48,9 +48,9 @@
                 "NU1701"
               ]
             },
-            "Oracle.ManagedDataAccess": {
+            "Oracle.ManagedDataAccess.Core": {
               "target": "Package",
-              "version": "[21.10.0, )"
+              "version": "[3.21.100, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

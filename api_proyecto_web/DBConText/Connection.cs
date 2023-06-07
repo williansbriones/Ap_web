@@ -33,16 +33,14 @@ namespace api_proyecto_web.DBConText
                         var dt = new DataTable();
                         dt.Load(reader);
                         con.Close();
+                        Console.WriteLine("wena choro eri weno");
                         return dt;
-
+                        
 
                     }
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.Message);
-                        Console.WriteLine(SQL);
-                        Console.WriteLine(con);
-                        Console.WriteLine(cmd);
                     }
                     con.Close();
                     return new DataTable();
