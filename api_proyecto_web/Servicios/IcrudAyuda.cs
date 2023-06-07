@@ -9,19 +9,18 @@ namespace api_proyecto_web.Servicios
     [ApiController]
     public class AtaqueController : ControllerBase
     {
-        UsuarioServicio servicio = new UsuarioServicio();
+//        UsuarioServicio servicio = new UsuarioServicio();
 
 
-        public void generar_Solicitud(Ayuda Objeto);
-        {
-            }
+//        public void generar_Solicitud(Ayuda Objeto);
+//        {
+//            }
            
         
         
         
         
 
-        
-    }
+            }
  }
 

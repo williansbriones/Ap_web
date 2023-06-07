@@ -32,7 +32,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                 ListaCompras[0].lista_productos.Add(new Productos
                 {
                     Id = 1,
-                    tipo_producto = 1,
+                    tipo_producto = Tipo_Producto.Todo,
                     nombre = "core I5",
                     caracteristicas = "procesador",
                     precio = 500000,
@@ -71,7 +71,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                 ListaCompras[1].lista_productos.Add(new Productos
                 {
                     Id = 1,
-                    tipo_producto = 1,
+                    tipo_producto = Tipo_Producto.Todo,
                     nombre = "core I5",
                     caracteristicas = "procesador",
                     precio = 500000,

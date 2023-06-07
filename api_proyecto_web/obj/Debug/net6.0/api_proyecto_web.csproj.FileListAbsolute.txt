@@ -64,3 +64,5 @@ C:\Users\willi\Desktop\Api_web\api_proyecto_web\obj\Debug\net6.0\api_proyecto_we
 C:\Users\willi\Desktop\Api_web\api_proyecto_web\obj\Debug\net6.0\ref\api_proyecto_web.dll
 C:\Users\willi\Desktop\Api_web\api_proyecto_web\bin\Debug\net6.0\Oracle.ManagedDataAccess.dll
 C:\Users\willi\Desktop\Api_web\api_proyecto_web\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\willi\Desktop\Api_web\api_proyecto_web\bin\Debug\net6.0\Contoso.Base.API.dll
+C:\Users\willi\Desktop\Api_web\api_proyecto_web\bin\Debug\net6.0\Newtonsoft.Json.dll
