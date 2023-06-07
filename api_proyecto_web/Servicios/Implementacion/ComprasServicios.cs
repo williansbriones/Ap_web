@@ -1,208 +1,71 @@
 ﻿using api_proyecto_web.Modelos;
 using api_proyecto_web.Modelos.@enum;
+using System.Data;
+using System.Drawing;
 
 namespace api_proyecto_web.Servicios.Implementacion
 {
     public class ComprasServicios : IcrudCompras<compras>
     {
-        static IList<compras> ListaCompras = new List<compras>();//creacion de una lista de compras
-        static Ofertas Ofertas = new Ofertas();//Oferta
         
-        public ComprasServicios() //Poblacion de la lista de compras "ListaCompras"
+        static DBConText.Connection db = new DBConText.Connection();
+
+        string con = "User Id=ADMIN;Password=ProgramacionWeb2023#;Data Source=r7dbt8zx2wqrpwgt_high;"
+                          + "Connection Timeout=30;";
+        public ComprasServicios(string con)
         {
-            
-            if (ListaCompras.Count == 0) {
-                Ofertas.Nombre = "procesadores descuento";
-                Ofertas.Id = 1;
-                Ofertas.CantidadDescuento = 10;
-                Ofertas.Estado = true;
-                Ofertas.FechaInicio = DateTime.Now;
-                Ofertas.FechaTermino = DateTime.Now;
-
-                ListaCompras.Add(new compras
-                {
-                    id_compra = 1,
-                    id_usuario = 1,
-                    lista_productos = new List<Productos>(),
-                    Fecha_compra = DateTime.Now,
-                    Fecha_entrega = DateTime.Now.AddDays(3),
-                    Estado_compra = EstadoCompra.Aceptado,
-
-                });//primera compra de la lista compra 
-                ListaCompras[0].lista_productos.Add(new Productos
-                {
-                    Id = 1,
-                    tipo_producto = Tipo_Producto.Todo,
-                    nombre = "core I5",
-                    caracteristicas = "procesador",
-                    precio = 500000,
-                    imagen1 = new imagen(),
-                    imagen2 = new imagen(),
-                    imagen3 = new imagen(),
-                    imagen4 = new imagen(),
-                    imagen5 = new imagen(),
-                    Cupon = new Cupon(),
-                    Ofertas = Ofertas,
-                }); ;//primer producto para la primera compra (Core I5)
-                ListaCompras.Add(new compras
-                {
-                    id_compra = 2,
-                    id_usuario = 1,
-                    lista_productos = new List<Productos>(),
-                    Fecha_compra = DateTime.Now,
-                    Fecha_entrega = DateTime.Now.AddDays(3),
-                    Estado_compra = EstadoCompra.Cancelado,
-
-                });//segunda compra de la "lista compra"
-                ListaCompras[1].lista_productos.Add(new Productos 
-                {
-                    Id = 2,
-                    nombre = "core I7",
-                    caracteristicas = "procesador",
-                    precio = 700000,
-                    imagen1 = new imagen(),
-                    imagen2 = new imagen(),
-                    imagen3 = new imagen(),
-                    imagen4 = new imagen(),
-                    imagen5 = new imagen(),
-                    Cupon = new Cupon(),
-                    Ofertas = Ofertas,
-                });//primer producto de la segunda compra lista compra (Core I7)
-                ListaCompras[1].lista_productos.Add(new Productos
-                {
-                    Id = 1,
-                    tipo_producto = Tipo_Producto.Todo,
-                    nombre = "core I5",
-                    caracteristicas = "procesador",
-                    precio = 500000,
-                    imagen1 = new imagen(),
-                    imagen2 = new imagen(),
-                    imagen3 = new imagen(),
-                    imagen4 = new imagen(),
-                    imagen5 = new imagen(),
-                    Cupon = new Cupon(),
-                    Ofertas = Ofertas,
-                });//segundo producto de la segunda lista compra compra (Core I5)
-                ListaCompras.Add(new compras
-                {
-                    id_compra = 3,
-                    id_usuario = 2,
-                    lista_productos = new List<Productos>(),
-                    Fecha_compra = DateTime.Now,
-                    Fecha_entrega = DateTime.Now.AddDays(3),
-                    Estado_compra = EstadoCompra.Empacado,
-
-                });//tercera compra de la "lista compra"
-                ListaCompras[2].lista_productos.Add(new Productos
-                {
-                    Id = 3,
-                    nombre = "GTX 1250 IT",
-                    caracteristicas = "Tarjetas Graficas",
-                    precio = 1200000,
-                    imagen1 = new imagen(),
-                    imagen2 = new imagen(),
-                    imagen3 = new imagen(),
-                    imagen4 = new imagen(),
-                    imagen5 = new imagen(),
-                    Cupon = new Cupon(),
-                    Ofertas = new Ofertas(),
-                });//primer producto de la tercera compra lista compra (GTX 1250 IT)
-
-            }
+            db = new DBConText.Connection(con);
         }
+
+        public ComprasServicios()
+        {
+        }
+
         IList<compras> IcrudCompras<compras>.BusquedaComprasCliente(int id_cliente)//metodo para obtener las compras de un cliente en especifico
         {
             IList<compras> ComprasCliente = new List<compras>();
 
-            foreach (compras com in ListaCompras)
-            {
-                float Porcentaje = 0;
-                int Descuento = 0;
-                int DescuentoTotal = 0;
-                if (com.id_usuario == id_cliente)
-                {
-                    foreach (Productos pro in com.lista_productos)
-                    {
-                        if (pro.Ofertas.CantidadDescuento > 0)
-                        {
-                            Porcentaje = (float)(pro.Ofertas.CantidadDescuento / 100.000);
-                            Descuento = (int)((float)(pro.precio * Porcentaje));
-                            DescuentoTotal = DescuentoTotal + Descuento;
-                        }
-                        if (pro.Cupon.CantidadDesuento > 0)
-                        {
-                            Porcentaje = (float)(pro.Cupon.CantidadDesuento / 100.000);
-                            Descuento = (int)((float)(pro.precio * Porcentaje));
-                            DescuentoTotal = DescuentoTotal + Descuento;
-
-                        }
-
-                        
-                    }
-
-
-
-                    com.Descuento = DescuentoTotal;
-                    com.SubTotal = com.Total - DescuentoTotal;
-                    ComprasCliente.Add(com);
-                }
-            }
 
             return ComprasCliente;
         }
 
         compras IcrudCompras<compras>.BusquedaCompraIndividual(int id_compra)//metodo para obtener una compra en especifico
         {
-            float Porcentaje = 0;
-            int Descuento = 0;
-            int DescuentoTotal = 0;
-            compras Compra_individual = new compras();
-            foreach (compras com in ListaCompras)
-            {
-                if (com.id_compra == id_compra)
-                {
-                    foreach (Productos pro in com.lista_productos)
-                    {
-                        if (pro.Ofertas.CantidadDescuento > 0)
-                        {
-                            Porcentaje = (float)(pro.Ofertas.CantidadDescuento / 100.000);
-                            Descuento = (int)((float)(pro.precio * Porcentaje));
-                            DescuentoTotal = DescuentoTotal + Descuento;
-                        }
-                        if (pro.Cupon.CantidadDesuento > 0)
-                        {
-                            Porcentaje = (float)(pro.Cupon.CantidadDesuento / 100.000);
-                            Descuento = (int)((float)(pro.precio * Porcentaje));
-                            DescuentoTotal = DescuentoTotal + Descuento;
+            IList<Productos> ListaProductos = new List<Productos>();
+            compras CompraIndividual = new compras();
 
-                        }
+            String Query = String.Format("select c.id_compra as id_compra, c.id_usuario as id_usuario, p.id_tipo_producto as id_tipo_producto, p.nombre as nombre_producto, p.caracteristicas as caracteristicas, p.precio as precio from compra c join detalle_compra dp on (dp.id_compra = c.id_compra) join producto p on (p.id_producto = dp.id_producto) where  c.id_compra = " + id_compra);
 
-
-                    }
-                    com.Descuento = DescuentoTotal;
-                    com.SubTotal = com.Total - DescuentoTotal;
-                    Compra_individual = com;
-                    break;
-                }
-                    
+            DataTable dt = db.Execute(Query);
+            
+            CompraIndividual.id_compra = Convert.ToInt32(dt.Rows[0]["id_compra"]);
+            CompraIndividual.id_usuario = Convert.ToInt32(dt.Rows[0]["id_usuario"]);
+            foreach (DataRow dr in dt.Rows) 
+            { 
+                ListaProductos.Add(new Productos { 
+                    Id = Convert.ToInt32(dr["id_tipo_producto"]),
+                    tipo_producto = Tipo_Producto.Teclados,
+                    nombre = "a",
+                    caracteristicas = "as",
+                    precio = 1,
+                    imagen1 = new imagen(),
+                    imagen2 = new imagen(),
+                    imagen3 = new imagen(),
+                    imagen4 = new imagen(),
+                    imagen5 = new imagen()
+                });
             }
+            CompraIndividual.Descuento = 1;
+            CompraIndividual.SubTotal = 1;
+            Cupon cupon = new Cupon();
 
-            return Compra_individual;
+
+            return CompraIndividual;
         }
 
         public IList<compras> BusquedaComprasClienteIniciado()
         {
             IList<compras> ComprasCliente = new List<compras>();
-
-
-
-            foreach (compras com in ListaCompras)
-            {
-                if (com.id_usuario == UsuarioServicio.UsuarioIniciado.Id)
-                {
-                    ComprasCliente.Add(com);
-                }
-            }
 
             return ComprasCliente;
         }

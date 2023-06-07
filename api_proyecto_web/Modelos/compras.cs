@@ -17,7 +17,7 @@ namespace api_proyecto_web.Modelos
         public int Descuento { get; set; }
         public int SubTotal { get; set; }
         public int CantidadProductos => this.lista_productos.Count;
-        
+        public Cupon cupon { get; set; }
         
         public compras()
         {
@@ -29,6 +29,7 @@ namespace api_proyecto_web.Modelos
             this.Estado_compra = EstadoCompra.Cancelado;
             this.SubTotal = 0;
             this.Descuento = 0;
+            this.cupon = new Cupon();
         }
 
     }

@@ -15,8 +15,6 @@ namespace api_proyecto_web.Modelos
         public imagen imagen3 { get; set; }
         public imagen imagen4 { get; set; }
         public imagen imagen5 { get; set; }
-        public Cupon Cupon { get; set; }
-        public Ofertas Ofertas { get; set; }
 
 
         public Productos()
@@ -31,8 +29,6 @@ namespace api_proyecto_web.Modelos
             imagen3 = new imagen();
             imagen4 = new imagen();
             imagen5 = new imagen();
-            Cupon = new Cupon();
-            Ofertas = new Ofertas();
         }
 
     }

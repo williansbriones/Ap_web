@@ -9,7 +9,7 @@ namespace api_proyecto_web.DBConText
                           + "Connection Timeout=30;";
         public Connection() 
         { 
-            OracleConfiguration.TnsAdmin = "C:\\Users\\willi\\Desktop\\Api_web\\consola de Pruebas\\Wallet\\";
+            OracleConfiguration.TnsAdmin = @"..\..\..\wallet";
             OracleConfiguration.WalletLocation = OracleConfiguration.TnsAdmin;
         }
         public Connection(string conn)
