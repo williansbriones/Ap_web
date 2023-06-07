@@ -1,15 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
-using api_proyecto_web.Modelos;
-using api_proyecto_web.Modelos.@enum;
+﻿
+using api_proyecto_web.DBConText;
+using System.Data;
 
-string nombre = string.Empty;
+api_proyecto_web.DBConText.Connection db = new api_proyecto_web.DBConText.Connection();
 
-if (nombre == string.Empty)
-{
-    Console.WriteLine("esta vacio");
-}
-else if (nombre != string.Empty) 
-{
-    Console.WriteLine("no esta vacia");
-}
+db = new api_proyecto_web.DBConText.Connection("User Id=ADMIN;Password=ProgramacionWeb2023#;Data Source=r7dbt8zx2wqrpwgt_high;"
+                          + "Connection Timeout=30;");
+
+
+string Query = string.Format(@"select id_estado_compra, nombre from estado_compra");
+
+DataTable dt = db.Execute(Query);
+Console.WriteLine(dt.Columns);
+Console.WriteLine(dt);
+Console.WriteLine("Select ejecutado");
+
 

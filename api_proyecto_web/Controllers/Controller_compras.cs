@@ -13,16 +13,20 @@ namespace api_proyecto_web.Controllers
     {
         IcrudCompras<compras> servicio_compras = new ComprasServicios();
 
-        
-
-        // GET api/<Controller_compras>/5
-        [HttpGet("Ordenes_de_compra/{id_compra}")]
+        //get
+        [HttpGet("OrdenesDeCompraClienteIniciado")]
+        public IList<compras> ComprasDeUsuariosIniciado()
+        {
+            return servicio_compras.BusquedaComprasClienteIniciado();
+        }
+        // GET api/Ordenes_de_compra/id_compta
+        [HttpGet("Ordenes_de_compra/{id_compra}")]//consulta de las ordenes de compra individuales
         public compras GetIndividual(int id_compra)
         {
             return servicio_compras.BusquedaCompraIndividual(id_compra);
         }
-
-        [HttpGet("Ordenes_de_clientes/{id_cliente}",Name ="GetCompras")]
+        //GET api/Ordenes_de_cliente/id_cliente
+        [HttpGet("Ordenes_de_clientes/{id_cliente}",Name ="GetCompras")]//Consulta de ordenes de compra por cliente
         public IList<compras> GetCompras(int id_cliente)
         {
             return servicio_compras.BusquedaComprasCliente(id_cliente);
