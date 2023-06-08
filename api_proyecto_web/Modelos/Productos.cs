@@ -15,8 +15,7 @@ namespace api_proyecto_web.Modelos
         public imagen imagen3 { get; set; }
         public imagen imagen4 { get; set; }
         public imagen imagen5 { get; set; }
-
-
+        public int cantidad { get; set; }
         public Productos()
         {
             Id = new int();
@@ -29,6 +28,7 @@ namespace api_proyecto_web.Modelos
             imagen3 = new imagen();
             imagen4 = new imagen();
             imagen5 = new imagen();
+            cantidad = new int();
         }
 
     }

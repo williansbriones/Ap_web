@@ -7,9 +7,7 @@ namespace api_proyecto_web.Servicios
         //Crud
         public IList<T> BusquedaComprasCliente(int id_cliente);
         public T BusquedaCompraIndividual(int id_compra);
-        
         public IList<T> BusquedaComprasClienteIniciado();
-
 
     }
 }
