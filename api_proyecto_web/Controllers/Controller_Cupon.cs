@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using api_proyecto_web.Servicios.Implementacion;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,12 +10,12 @@ namespace api_proyecto_web.Controllers
     public class Controller_Cupon : ControllerBase
 
     {
-        Servicios.CuponServicios cupon = new Servicios.Implementacion.CuponServicios();
+        CuponServicios cupon = new Servicios.Implementacion.CuponServicios();
 
-        public Controller_Cupon(Servicios.Cupon Servicios cupon)
-        {
-            this.cupon = cupon;
-        }
+        //public Controller_Cupon(Servicios)
+        //{
+        //    this.cupon = cupon;
+        //}
 
         // GET: api/<Controller_Cupon>
         [HttpGet]
