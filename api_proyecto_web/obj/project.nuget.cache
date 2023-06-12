@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "5JGh2AOYand+xdPPa2XkTr9NKm93JBByqmDyQ1LMwCwpNa78Hot8qC1AipdzmDXzotSAXw9l2fCACeHpn7zatg==",
   "success": true,
   "projectFilePath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
+=======
+  "dgSpecHash": "wr+XDgeMgPEfMRX6zrufYgKxJv8RAiseCOl+dhvVHiM4zr1/goTiVo11YQC8/KG+bPAFtDJyqrGkkeUxscc+Mw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
+>>>>>>> 176224ccbbd17f3c387765fb11e6cca3212e7fc0
   "expectedPackageFiles": [
     "C:\\Users\\MR ESCUICHI\\.nuget\\packages\\contoso.base.api\\1.0.3\\contoso.base.api.1.0.3.nupkg.sha512",
     "C:\\Users\\MR ESCUICHI\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

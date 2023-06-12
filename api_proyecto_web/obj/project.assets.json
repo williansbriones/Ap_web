@@ -6351,11 +6351,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
       "projectName": "api_proyecto_web",
       "projectPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
       "packagesPath": "C:\\Users\\MR ESCUICHI\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
+      "projectName": "api_proyecto_web",
+      "projectPath": "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
+      "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\api_proyecto_web\\obj\\",
+>>>>>>> 176224ccbbd17f3c387765fb11e6cca3212e7fc0
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

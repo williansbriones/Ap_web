@@ -6452,11 +6452,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
       "projectName": "consola de Pruebas",
       "projectPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
       "packagesPath": "C:\\Users\\MR ESCUICHI\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\consola de Pruebas\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
+      "projectName": "consola de Pruebas",
+      "projectPath": "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
+      "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\consola de Pruebas\\obj\\",
+>>>>>>> 176224ccbbd17f3c387765fb11e6cca3212e7fc0
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6478,8 +6486,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
               "projectPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj"
+=======
+            "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
+              "projectPath": "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj"
+>>>>>>> 176224ccbbd17f3c387765fb11e6cca3212e7fc0
             }
           }
         }
