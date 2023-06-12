@@ -11,7 +11,7 @@ namespace api_proyecto_web.Controllers
     [ApiController]
     public class Controller_usuario : ControllerBase
     {
-        Servicios.UsuarioServicio usuario = new Servicios.Implementacion.UsuarioServicio();
+        Servicios.IcrudUsuario usuario = new Servicios.Implementacion.UsuarioServicio();
 
 
         // GET: api/<Controller_usuario>
@@ -22,23 +22,17 @@ namespace api_proyecto_web.Controllers
         }
 
         // GET api/<Controller_usuario>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpPost("Inicio_Sesion")]
+        public void Post( string email, string contraseña)
         {
-            return "value";
-        }
-
-        // POST api/<Controller_usuario>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
+            usuario.InicioSesion(email,contraseña);
         }
 
         // PUT api/<Controller_usuario>/5
         [HttpPut("CambioContraseña")]
-        public void Put([FromBody] string contraseña)
+        public void Put(string contraseña_antigua, string contraseña)
         {
-            usuario.CambiarContraseña(contraseña);
+            usuario.CambiarContraseña(contraseña_antigua, contraseña);
         }
 
         // DELETE api/<Controller_usuario>/5

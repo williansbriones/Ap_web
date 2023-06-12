@@ -2,11 +2,10 @@
 
 namespace api_proyecto_web.Servicios
 {
-    public interface UsuarioServicio
+    public interface IcrudUsuario
     {
-        public void CambiarContraseña(String Contraseña);
+        public void CambiarContraseña(string constraseña_antigua, string Contraseña);
         public Usuario informacionUsuario();
-
-
+        public void InicioSesion(string correo, string contraseña);
     }
 }
