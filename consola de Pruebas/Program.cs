@@ -11,3 +11,4 @@ DateTime fe = new DateTime();
 fe = DateTime.Parse(fecha == "00/00/00" ? "21/30/21" : fecha);
 
 Console.WriteLine(fe);
+Console.WriteLine("hola");

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\willi\\Desktop\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {}
+    "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\willi\\Desktop\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
+    "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\willi\\Desktop\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
+        "projectUniqueName": "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
         "projectName": "api_proyecto_web",
-        "projectPath": "C:\\Users\\willi\\Desktop\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
+        "projectPath": "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
         "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\willi\\Desktop\\Api_web\\api_proyecto_web\\obj\\",
+        "outputPath": "C:\\Users\\willi\\Desktop\\respaldo\\Api_web\\api_proyecto_web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
