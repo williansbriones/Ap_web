@@ -18,7 +18,8 @@ namespace api_proyecto_web.Controllers
         //}
 
         // GET: api/<Controller_Cupon>
-        // hdp por la puta 
+        // hdp
+        // nose que pasa :3
         [HttpGet]
         public IEnumerable<string> Get()
         {
