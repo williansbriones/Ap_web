@@ -18,12 +18,6 @@ namespace api_proyecto_web.Controllers
         //}
 
         // GET: api/<Controller_Cupon>
-<<<<<<< HEAD
-        // hdp
-        // nose que pasa :3
-=======
-        //// hdp por la puta 
->>>>>>> e1fdc84742be2557c91619c38f92e7007fd6de8b
         [HttpGet]
         public IEnumerable<string> Get()
         {
