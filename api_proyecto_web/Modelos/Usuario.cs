@@ -1,5 +1,5 @@
 ﻿using api_proyecto_web.Modelos.@enum;
-
+//clase de usuario
 namespace api_proyecto_web.Modelos
 {
     public class Usuario
