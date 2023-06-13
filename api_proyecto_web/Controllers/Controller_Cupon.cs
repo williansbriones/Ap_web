@@ -12,10 +12,7 @@ namespace api_proyecto_web.Controllers
     {
         CuponServicios cupon = new Servicios.Implementacion.CuponServicios();
 
-        //public Controller_Cupon(Servicios)
-        //{
-        //    this.cupon = cupon;
-        //}
+    
 
         // GET: api/<Controller_Cupon>
         [HttpGet]
