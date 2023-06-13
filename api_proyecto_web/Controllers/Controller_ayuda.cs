@@ -13,8 +13,6 @@ namespace api_proyecto_web.Controllers
     public class Controller_ayuda : ControllerBase
     {
         //static icrudAyuda servicio;
-        
-
         // POST api/<Controller_ayuda>
       //  [HttpPost]
        // public void PostAyuda([FromBody] email descripcion)
