@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj": {}
   },
   "projects": {
@@ -12,13 +13,27 @@
         "projectPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
         "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\obj\\",
+=======
+    "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
+        "projectName": "api_proyecto_web",
+        "projectPath": "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
+        "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\api_proyecto_web\\obj\\",
+>>>>>>> 924d14caee68ce451afd2039e11ea3991b4ce57e
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\danil\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 924d14caee68ce451afd2039e11ea3991b4ce57e
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +41,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -85,6 +99,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -93,13 +108,24 @@
         "projectPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
         "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\obj\\",
+=======
+    "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
+        "projectName": "consola de Pruebas",
+        "projectPath": "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
+        "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\consola de Pruebas\\obj\\",
+>>>>>>> 924d14caee68ce451afd2039e11ea3991b4ce57e
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\danil\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 924d14caee68ce451afd2039e11ea3991b4ce57e
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -107,15 +133,19 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
                 "projectPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj"
+=======
+              "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
+                "projectPath": "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj"
+>>>>>>> 924d14caee68ce451afd2039e11ea3991b4ce57e
               }
             }
           }
