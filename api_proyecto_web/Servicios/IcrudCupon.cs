@@ -7,6 +7,10 @@
         //Eliminar cupon 
         public void Eliminarcupon(int id_cupon);
         //modificar 
+        public void Modificarcupon();
+        //habilitar y desabiliar
+        public void Des_Habilitar();
 
-    }
+
+    }   
 }

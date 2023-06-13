@@ -10,9 +10,9 @@ namespace api_proyecto_web.Servicios.Implementacion
         {
             db = new DBConText.Connection("User Id=ADMIN;Password=ProgramacionWeb2023#;Data Source=r7dbt8zx2wqrpwgt_high;"
                           + "Connection Timeout=30;");
-        }//credenciales para realizar la consulta en la base de datos
+        }
 
-
+        //credenciales para realizar la consulta en la base de datos
         public void Crearcupon(string Nombre, int CantidadDesuento, string Codigo, int Cantidad_limite, string FechaInicio, string FechaTermino)
         {
             String query = "insert  into cupon VALUES (SQ_IDcupon.NEXTVAL,'T',"+CantidadDesuento+",'" + Nombre + "','"+ Codigo+"',"+ Cantidad_limite+",'" + FechaInicio+"','"+ FechaTermino + "')";
