@@ -5,22 +5,18 @@ using Microsoft.AspNetCore.Mvc;
 namespace api_proyecto_web.Servicios
 {
 
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AtaqueController : ControllerBase
+    public interface IcrudAyuda
     {
-//        UsuarioServicio servicio = new UsuarioServicio();
+        public void GenerarAyuda(string email, string descripcion,string fecha_ingreso);
 
 
-//        public void generar_Solicitud(Ayuda Objeto);
-//        {
-//            }
-           
+
+    }
         
         
         
         
 
-            }
+            
  }
 
