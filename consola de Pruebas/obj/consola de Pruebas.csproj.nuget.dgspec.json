@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj": {}
+    "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
+    "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
+        "projectUniqueName": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
         "projectName": "api_proyecto_web",
-        "projectPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
-        "packagesPath": "C:\\Users\\MR ESCUICHI\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\obj\\",
+        "projectPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
+        "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MR ESCUICHI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\danil\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -85,20 +85,20 @@
         }
       }
     },
-    "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj": {
+    "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
+        "projectUniqueName": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
         "projectName": "consola de Pruebas",
-        "projectPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
-        "packagesPath": "C:\\Users\\MR ESCUICHI\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\consola de Pruebas\\obj\\",
+        "projectPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
+        "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MR ESCUICHI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\danil\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -114,8 +114,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
-                "projectPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj"
+              "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
+                "projectPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj"
               }
             }
           }
