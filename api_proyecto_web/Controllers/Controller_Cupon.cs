@@ -1,4 +1,5 @@
-﻿using api_proyecto_web.Servicios.Implementacion;
+﻿using api_proyecto_web.Servicios;
+using api_proyecto_web.Servicios.Implementacion;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -10,9 +11,9 @@ namespace api_proyecto_web.Controllers
     public class Controller_Cupon : ControllerBase
 
     {
-        CuponServicios cupon = new Servicios.Implementacion.CuponServicios();
+        IcrudCupon CuponServicios = new CuponServicios();
 
-    
+
 
         // GET: api/<Controller_Cupon>
         [HttpGet]
@@ -30,8 +31,9 @@ namespace api_proyecto_web.Controllers
 
         // POST api/<Controller_Cupon>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(string Nombre, int CantidadDesuento, string Codigo, int Cantidad_limite, string FechaInicio, string FechaTermino)
         {
+            CuponServicios.Crearcupon(Nombre, CantidadDesuento, Codigo, Cantidad_limite, FechaInicio, FechaTermino);
         }
 
         // PUT api/<Controller_Cupon>/5
