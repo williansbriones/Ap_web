@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using api_proyecto_web.Modelos;
+using System.Data;
 
 namespace api_proyecto_web.Servicios.Implementacion
 {
@@ -6,6 +7,8 @@ namespace api_proyecto_web.Servicios.Implementacion
     {
         //Coneccion BD
         static DBConText.Connection db = new DBConText.Connection();
+        private object delete;
+
         public CuponServicios()
         {
             db = new DBConText.Connection("User Id=ADMIN;Password=ProgramacionWeb2023#;Data Source=r7dbt8zx2wqrpwgt_high;"
@@ -21,9 +24,26 @@ namespace api_proyecto_web.Servicios.Implementacion
             dt = db.Execute("commit");
         }
 
+        public void Des_Habilitar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Des_Habilitar(int id_cupon)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Eliminarcupon(int id_cupon)
         {
             throw new NotImplementedException();
         }
+
+        public void Modificarcupon(int id_cupon, string Nombre, int CantidadDesuento, string Codigo, int Cantidad_limite, string FechaInicio, string FechaTermino)
+        {
+            //falta el prcedimiento para modificar 
+        }
+    
+      
     }
 }
