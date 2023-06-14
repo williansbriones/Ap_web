@@ -10,6 +10,7 @@
         public void Modificarcupon(int id_cupon, string Nombre, int CantidadDesuento, string Codigo, int Cantidad_limite, string FechaInicio, string FechaTermino);
         //habilitar y desabiliar
         public void Des_Habilitar(int id_cupon);
+        //fergj.kaesjtgñkaje
        
     }   
 }
