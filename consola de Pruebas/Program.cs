@@ -4,11 +4,31 @@ using api_proyecto_web.Modelos;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
 
-string fecha = "00/00/00";
+IList<int> list = new List<int>();
 
-DateTime fe = new DateTime();
+list.Add(1);
+list.Add(0);
+list.Add(1);
+list.Add(2);
+list.Add(3);
+list.Add(4);
+list.Add(5);
+int firstItem;
+try
+{
 
-fe = DateTime.Parse(fecha == "00/00/00" ? "21/30/21" : fecha);
+    firstItem = list.Select((item, index) => new
+    {
+        ItemName = item,
+        Position = index
+    }).Where(i => i.ItemName == 0)
+     .First()
+     .Position;
+}
+catch
+{
+    firstItem = 0;
+}
 
-Console.WriteLine(fe);
-Console.WriteLine("hola");
+
+Console.WriteLine(firstItem);

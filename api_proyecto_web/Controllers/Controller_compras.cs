@@ -31,12 +31,11 @@ namespace api_proyecto_web.Controllers
         {
             return servicio_compras.BusquedaComprasCliente(id_cliente);
         }
-
-
         // POST api/<Controller_compras>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("ingreso_Producto")]
+        public void Post(int id_producto, int cantidad)
         {
+            servicio_compras.Agregarproducto(id_producto, cantidad);
         }
 
         // PUT api/<Controller_compras>/5

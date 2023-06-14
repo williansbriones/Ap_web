@@ -26,7 +26,7 @@ namespace api_proyecto_web.Modelos
             this.lista_productos = new List<Productos>();
             this.Fecha_compra = DateTime.Now;
             this.Fecha_entrega = DateTime.Now.AddDays(3);
-            this.Estado_compra = EstadoCompra.Cancelado;
+            this.Estado_compra = EstadoCompra.Carro_de_compra;
             this.cupon = new Cupon();
         }
 
