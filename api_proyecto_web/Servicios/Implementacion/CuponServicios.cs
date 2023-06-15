@@ -41,9 +41,27 @@ namespace api_proyecto_web.Servicios.Implementacion
 
         public void Modificarcupon(int id_cupon, string Nombre, int CantidadDesuento, string Codigo, int Cantidad_limite, string FechaInicio, string FechaTermino)
         {
-            //falta el prcedimiento para modificar 
+            string query = "UPDATE cupon SET Nombre = :Nombre, CantidadDesuento = :CantidadDesuento, Codigo = :Codigo, Cantidad_limite = :Cantidad_limite, FechaInicio = :FechaInicio, FechaTermino = :FechaTermino WHERE id_cupon = :id_cupon";
+
+            // Agregar los parámetros y sus valores correspondientes
+            var parametros = new Dictionary<string, object>//corregir
+           {
+            { "Nombre", Nombre },
+            { "CantidadDesuento", CantidadDesuento },
+            { "Codigo", Codigo },
+            { "Cantidad_limite", Cantidad_limite },
+            { "FechaInicio", FechaInicio },
+            { "FechaTermino", FechaTermino },
+            { "id_cupon", id_cupon }
+           };
+
+            // Ejecutar la consulta
+            DataTable dt = db.Execute(query, parametros);
+
+            dt = db.Execute("commit");
         }
-    
-      
+
+
+
     }
 }
