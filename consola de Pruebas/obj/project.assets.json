@@ -6446,37 +6446,24 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\danil\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
-=======
-    "C:\\Users\\willi\\.nuget\\packages\\": {}
->>>>>>> 924d14caee68ce451afd2039e11ea3991b4ce57e
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
       "projectName": "consola de Pruebas",
       "projectPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
       "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
-      "projectName": "consola de Pruebas",
-      "projectPath": "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
-      "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\consola de Pruebas\\obj\\",
->>>>>>> 924d14caee68ce451afd2039e11ea3991b4ce57e
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\danil\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-        "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 924d14caee68ce451afd2039e11ea3991b4ce57e
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6484,19 +6471,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-<<<<<<< HEAD
             "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
               "projectPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj"
-=======
-            "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
-              "projectPath": "C:\\Users\\willi\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj"
->>>>>>> 924d14caee68ce451afd2039e11ea3991b4ce57e
             }
           }
         }
@@ -6539,5 +6522,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
