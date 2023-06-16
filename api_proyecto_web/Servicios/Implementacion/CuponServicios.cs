@@ -11,8 +11,7 @@ namespace api_proyecto_web.Servicios.Implementacion
 
         public CuponServicios()
         {
-            db = new DBConText.Connection("User Id=ADMIN;Password=ProgramacionWeb2023#;Data Source=r7dbt8zx2wqrpwgt_high;"
-                          + "Connection Timeout=30;");
+            db = new DBConText.Connection();
         }
 
         //credenciales para realizar la consulta en la base de datos
@@ -56,7 +55,7 @@ namespace api_proyecto_web.Servicios.Implementacion
            };
 
             // Ejecutar la consulta
-            DataTable dt = db.Execute(query, parametros);
+            DataTable dt = db.Execute(query);
 
             dt = db.Execute("commit");
         }
