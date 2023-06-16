@@ -12,16 +12,16 @@ namespace api_proyecto_web.Controllers
     [ApiController]
     public class Controller_ayuda : ControllerBase
     {
-        //static icrudAyuda servicio;
+
+        IcrudAyuda servicioAyuda = new AyudaServicio();
         
 
-        // POST api/<Controller_ayuda>
-      //  [HttpPost]
-       // public void PostAyuda([FromBody] email descripcion)
-        //{
-       //     IcrudAyuda.generar_Solicitud(email)
+        [HttpPost ("GenerarAyuda")]
+       public void Post(string email, string descripcion,string fecha_ingreso)
+        {
+            servicioAyuda.GenerarAyuda(email,descripcion, fecha_ingreso);
 
-        //}
+        }
 
         
 

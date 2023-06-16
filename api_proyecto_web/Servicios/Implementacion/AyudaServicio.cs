@@ -3,7 +3,7 @@
 
 namespace api_proyecto_web.Servicios.Implementacion
 {
-    public class AyudaServicio
+    public class AyudaServicio : IcrudAyuda
     {
         static Ayuda Ayuda1 = new Ayuda();
 
@@ -20,6 +20,12 @@ namespace api_proyecto_web.Servicios.Implementacion
 
 
         }
+
+        public void GenerarAyuda(string email, string descripcion, string fecha_ingreso)
+        {
+            throw new NotImplementedException();
+        }
+
         public void generar_Solicitud(string email, string descripcion)
         {
             Ayuda1.email = email;
