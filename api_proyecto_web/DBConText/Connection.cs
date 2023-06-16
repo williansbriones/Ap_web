@@ -13,7 +13,7 @@ namespace api_proyecto_web.DBConText
             connection_str = constructor.GetSection("ConnectionStrings:azure").Value;
         }
 
-        public  DataTable Execute(string query)
+        public  DataTable Execute(string query, Dictionary<string, object> parametros)
         {
             using(var sql = new SqlConnection(connection_str))
             {
