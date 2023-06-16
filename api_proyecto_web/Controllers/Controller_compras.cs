@@ -40,7 +40,7 @@ namespace api_proyecto_web.Controllers
 
         // PUT api/<Controller_compras>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, string value)
         {
         }
 
