@@ -1,7 +1,11 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {}
+=======
     "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {}
+>>>>>>> af25124b238158dd5266bf3a5fd7801a1e7e0148
   },
   "projects": {
     "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
@@ -9,15 +13,25 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
         "projectName": "api_proyecto_web",
+<<<<<<< HEAD
+        "projectPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
+        "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\obj\\",
+=======
         "projectPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
         "packagesPath": "C:\\Users\\MR ESCUICHI\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\obj\\",
+>>>>>>> af25124b238158dd5266bf3a5fd7801a1e7e0148
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\danil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\MR ESCUICHI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> af25124b238158dd5266bf3a5fd7801a1e7e0148
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

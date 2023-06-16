@@ -6446,23 +6446,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
+    "C:\\Users\\danil\\.nuget\\packages\\": {},
+=======
     "C:\\Users\\MR ESCUICHI\\.nuget\\packages\\": {},
+>>>>>>> af25124b238158dd5266bf3a5fd7801a1e7e0148
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
+      "projectName": "consola de Pruebas",
+      "projectPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
+      "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\obj\\",
+=======
       "projectUniqueName": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
       "projectName": "consola de Pruebas",
       "projectPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\consola de Pruebas\\consola de Pruebas.csproj",
       "packagesPath": "C:\\Users\\MR ESCUICHI\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\consola de Pruebas\\obj\\",
+>>>>>>> af25124b238158dd5266bf3a5fd7801a1e7e0148
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
+        "C:\\Users\\danil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
         "C:\\Users\\MR ESCUICHI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> af25124b238158dd5266bf3a5fd7801a1e7e0148
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6478,8 +6494,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< HEAD
+            "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
+              "projectPath": "C:\\Users\\danil\\Desktop\\api_web\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj"
+=======
             "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
               "projectPath": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj"
+>>>>>>> af25124b238158dd5266bf3a5fd7801a1e7e0148
             }
           }
         }
@@ -6528,7 +6549,11 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
+      "message": "Problema al leer el archivo de caché C:\\Users\\danil\\Desktop\\api_web\\Api_web\\consola de Pruebas\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
       "message": "Problema al leer el archivo de caché C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\consola de Pruebas\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> af25124b238158dd5266bf3a5fd7801a1e7e0148
     }
   ]
 }
