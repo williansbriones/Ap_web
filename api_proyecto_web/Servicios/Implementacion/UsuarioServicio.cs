@@ -1,4 +1,5 @@
-﻿using api_proyecto_web.Modelos;
+﻿using api_proyecto_web.DBConText;
+using api_proyecto_web.Modelos;
 using api_proyecto_web.Modelos.@enum;
 using System.Data;
 
@@ -10,8 +11,7 @@ namespace api_proyecto_web.Servicios.Implementacion
         static DBConText.Connection db = new DBConText.Connection();
         public UsuarioServicio()
         {
-            db = new DBConText.Connection("User Id=ADMIN;Password=ProgramacionWeb2023#;Data Source=r7dbt8zx2wqrpwgt_high;"
-                          + "Connection Timeout=30;");
+            db = new Connection();
         }//credenciales para realizar la consulta en la base de datos
 
 
@@ -37,7 +37,7 @@ namespace api_proyecto_web.Servicios.Implementacion
         public void InicioSesion(string correo, string contraseña)
         {
             Usuario Datos = new Usuario();
-            string Query = string.Format("SELECT id_usuario AS id_usuario, nombre AS nombre , appaterno||' '||apmaterno AS apellidos, id_tipo_usuario as tipo_usuario, telefono as telefono, email as email, direccion as direccion, comuna as comuna, contraseña as contraseña FROM usuario where email ='"+correo +"'and contraseña ='"+contraseña+"'");
+            string Query = string.Format("SELECT id_usuario AS id_usuario, nombre AS nombre , appaterno+' '+apmaterno AS apellidos, id_tipo_usuario as tipo_usuario, telefono as telefono, email as email, direccion as direccion, comuna as comuna, contraseña as contraseña FROM usuario where email ='"+correo +"'and contraseña ='"+contraseña+"'");
             DataTable dt1 = db.Execute(Query);
 
             if(dt1.Rows.Count > 0)

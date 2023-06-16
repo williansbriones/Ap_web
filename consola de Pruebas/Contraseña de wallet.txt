@@ -1,8 +1,9 @@
 <Usuario>
 ADMIN
 <Contraseña>
-ProgramacionWeb2023#
-
+asdfghjklñ#123
+<usuario slq>
+admin_upgrade
 -----------------------------------------
 -----------------------------------------
 

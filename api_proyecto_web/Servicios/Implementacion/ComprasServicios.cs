@@ -1,4 +1,5 @@
-﻿using api_proyecto_web.Modelos;
+﻿using api_proyecto_web.DBConText;
+using api_proyecto_web.Modelos;
 using api_proyecto_web.Modelos.@enum;
 using System;
 using System.Data;
@@ -15,8 +16,7 @@ namespace api_proyecto_web.Servicios.Implementacion
         static DBConText.Connection db = new DBConText.Connection();
         public ComprasServicios()
         {
-            db = new DBConText.Connection("User Id=ADMIN;Password=ProgramacionWeb2023#;Data Source=r7dbt8zx2wqrpwgt_high;"
-                          + "Connection Timeout=30;");
+            db = new Connection();
         }//credencial para realizar la consulta en la base de datos
         IList<compras> IcrudCompras<compras>.BusquedaComprasCliente(int id_cliente)//metodo para obtener las compras de un cliente en especifico
         {

@@ -1,79 +1,47 @@
-﻿using Oracle.ManagedDataAccess.Client;
-using System.Data;
+﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace api_proyecto_web.DBConText
 {
     public class Connection
     {
-        string ConnectionString = "User Id=ADMIN;Password=ProgramacionWeb2023#;Data Source=r7dbt8zx2wqrpwgt_high; " + " Connection Timeout=30;";
+        private string connection_str = string.Empty;
         public Connection()
         {
-            OracleConfiguration.TnsAdmin = @"Wallet";
-            OracleConfiguration.WalletLocation = OracleConfiguration.TnsAdmin;
+            var constructor = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json").Build();
+            connection_str = constructor.GetSection("ConnectionStrings:azure").Value;
         }
-        public Connection(string conn)
-        {
-            this.ConnectionString = conn;
-        }
-        public DataTable Execute(string SQL)
-        {
-            using (OracleConnection con = new OracleConnection(this.ConnectionString))
-            {
-                using (OracleCommand cmd = con.CreateCommand())
-                {
-                    try
-                    {
-                        con.Open();
-                        Console.WriteLine("Base de datos connectada con exito");
-                        Console.WriteLine();
 
-                        cmd.CommandText = SQL;
-                        OracleDataReader reader = cmd.ExecuteReader();
+        public  DataTable Execute(string query)
+        {
+            using(var sql = new SqlConnection(connection_str))
+            {
+                try 
+                { 
+                    using(var cmd = new SqlCommand(query, sql))
+                    {
+                        sql.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
                         var dt = new DataTable();
                         dt.Load(reader);
-                        con.Close();
-                        Console.WriteLine("Select ejecutado");
-                        Console.WriteLine("Cantidad de lineas consultadas: " + dt.Rows.Count);
+                        sql.CloseAsync();
+                        Console.WriteLine("coneccion exitosa");
                         return dt;
 
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                        Console.WriteLine("No se vinculo la con la base de datos");
-                    }
-                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                     return new DataTable();
                 }
-            }
-        }
 
-        public void ExecuteInsert(string SQL)
-        {
-            using (OracleConnection con = new OracleConnection(this.ConnectionString))
-            {
-                using (OracleCommand cmd = con.CreateCommand())
-                {
-                    try
-                    {
-                        con.Open();
-                        Console.WriteLine("Base de datos connectada con exito");
-                        Console.WriteLine();
-
-                        cmd.CommandText = SQL;
-                        OracleDataReader reader = cmd.ExecuteReader();
-                        con.Close();
-                        Console.WriteLine("wena choro eri weno");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                        Console.WriteLine("No se vinculo la con la base de datos");
-                    }
-                    con.Close();
-                }
             }
 
+
+              
         }
+
     }
 }

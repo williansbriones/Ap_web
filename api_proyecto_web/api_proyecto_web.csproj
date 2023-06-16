@@ -12,6 +12,7 @@
 	 <PackageReference Include="Contoso.Base.API" Version="1.0.3">
         <NoWarn>NU1701</NoWarn>
 	 </PackageReference>
+	 <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
 </Project>
