@@ -39,15 +39,11 @@ namespace api_proyecto_web.Controllers
         }
 
         // PUT api/<Controller_compras>/5
-        [HttpPut("{id}")]
-        public void Put(int id, string value)
+        [HttpPut("(EliminarProducto)")]
+        public void EliminarProducto(int id_producto, int cantidad)
         {
+            servicio_compras.EliminarProducto(id_producto, cantidad);
         }
 
-        // DELETE api/<Controller_compras>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

@@ -13,13 +13,13 @@ namespace api_proyecto_web.DBConText
             connection_str = constructor.GetSection("ConnectionStrings:azure").Value;
         }
 
-        public  DataTable Execute(string query)
+        public DataTable Execute(string query)
         {
-            using(var sql = new SqlConnection(connection_str))
+            using (var sql = new SqlConnection(connection_str))
             {
-                try 
-                { 
-                    using(var cmd = new SqlCommand(query, sql))
+                try
+                {
+                    using (var cmd = new SqlCommand(query, sql))
                     {
                         sql.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
@@ -40,8 +40,14 @@ namespace api_proyecto_web.DBConText
             }
 
 
-              
+
         }
 
+
+
+
+
     }
+
+    
 }

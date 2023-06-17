@@ -2,19 +2,14 @@
 using api_proyecto_web.Modelos;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
+using System.Drawing.Printing;
 
+Connection db = new Connection();
 
-Connection con = new Connection();
+var variable = new DataTable();
 
-string Query = "select * from producto";
+string query = "SELECT NEXT VALUE FOR SQ_id_usuario as numero";
 
-DataTable dt;
+variable = db.Execute(query);
 
-dt = con.Execute(Query);
-
-
-Console.WriteLine("cantidad de filas: "+dt.Rows.Count);
-
-Console.WriteLine("segundo producto es:"+ dt.Rows[1]["nombre"]);
-
-
+Console.WriteLine(variable.Rows[0]["numero"]);

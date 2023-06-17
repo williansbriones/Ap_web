@@ -1,7 +1,10 @@
 ﻿using api_proyecto_web.DBConText;
 using api_proyecto_web.Modelos;
 using api_proyecto_web.Modelos.@enum;
+using Newtonsoft.Json.Linq;
 using System.Data;
+using static System.Net.Mime.MediaTypeNames;
+using System.Drawing;
 
 namespace api_proyecto_web.Servicios.Implementacion
 {
@@ -9,10 +12,7 @@ namespace api_proyecto_web.Servicios.Implementacion
     {
 
         static DBConText.Connection db = new DBConText.Connection();
-        public UsuarioServicio()
-        {
-            db = new Connection();
-        }//credenciales para realizar la consulta en la base de datos
+
 
 
         public static Usuario UsuarioIniciado = UsuarioIniciado !=null ? UsuarioIniciado : new Usuario() ;
@@ -55,6 +55,75 @@ namespace api_proyecto_web.Servicios.Implementacion
 
 
             UsuarioIniciado = Datos;
+        }
+
+        public void CrearUsuario(string nombre, string apellidos, string telefono, string email, string direccion, string comuna, string contraseña)
+        {
+            string primer_apellido = "";
+            string segundo_apellido = "";
+
+            int indice_espacio = (apellidos.IndexOf(" "));
+            int largoApellido = (apellidos.Length);
+
+            if (indice_espacio > 0)
+            {
+                primer_apellido = apellidos.Substring(0, (indice_espacio - 1));
+                segundo_apellido = apellidos.Substring((indice_espacio + 1), (largoApellido - (indice_espacio + 1)));
+            }
+            else
+            {
+                primer_apellido = apellidos;
+            }
+
+            string QueryCreacionUsuario = "begin tran INSERT INTO usuario VALUES (NEXT VALUE FOR SQ_id_usuario, '" + nombre + "' ,'" + primer_apellido + "','" + segundo_apellido + "',1,'" + telefono + "','" + email + "','" + direccion + "','" + comuna + "','" + contraseña + "') COMMIT TRAN";
+            db.Execute(QueryCreacionUsuario);
+        }
+
+        public void EditarUsuario(string nombre, string apellido, string telefono, string email, string direccion, string comuna)
+        {
+            if(UsuarioIniciado.Id == 0) //codigo que genera un usuario el cual se incia en caso de no tener un usuario iniciado
+            {
+                string query = "SELECT NEXT VALUE FOR SQ_id_usuario as numero";
+                DataTable dt_id_nuevo_usuario = new DataTable();
+                dt_id_nuevo_usuario = db.Execute(query);
+                string query_ingreso_usuario = "begin tran INSERT INTO usuario VALUES("+ dt_id_nuevo_usuario.Rows[0]["numero"] +", '', '', '', 0, '"+dt_id_nuevo_usuario.Rows[0]["numero"]+"', '"+ dt_id_nuevo_usuario.Rows[0]["numero"] + "', '', '', '') COMMIT TRAN";
+                db.Execute(query_ingreso_usuario);
+                UsuarioIniciado.Id = Convert.ToInt32(dt_id_nuevo_usuario.Rows[0]["numero"]);
+            }
+
+            string nombre_str = nombre != ""? nombre : UsuarioIniciado.Nombre;
+            string apellido_str = apellido != ""? apellido : UsuarioIniciado.Apellido;
+            string telefono_str = telefono != ""? telefono : UsuarioIniciado.telefono;
+            string email_str = email != ""? email : UsuarioIniciado.Email;
+            string direccion_str = direccion != ""? direccion : UsuarioIniciado.Direccion;
+            string comuna_str = comuna != ""? comuna : UsuarioIniciado.Comuna;
+            string primer_apellido = "";
+            string segundo_apellido = "";
+
+            int indice_espacio = (apellido_str.IndexOf(" "));
+            int largoApellido = (apellido_str.Length);
+
+            if (indice_espacio > 0)
+            {
+                primer_apellido = apellido_str.Substring(0, (indice_espacio - 1));
+                segundo_apellido = apellido_str.Substring((indice_espacio + 1), (largoApellido - (indice_espacio + 1)));
+            }
+            else
+            {
+                primer_apellido = apellido_str;
+            }
+
+            string QueryInsert = "begin tran UPDATE usuario SET nombre= '" + nombre_str+"', appaterno = '"+primer_apellido+"', apmaterno = '"+segundo_apellido+"', telefono = '"+telefono_str+"', email= '"+email_str+"', direccion='"+direccion_str+"', comuna = '"+comuna_str+"' WHERE id_usuario = "+UsuarioIniciado.Id+ " COMMIT TRAN"; 
+
+            db.Execute(QueryInsert);
+
+        }
+
+
+
+        public void cerrarSesion()
+        {
+            UsuarioIniciado = new Usuario();
         }
     }
 }

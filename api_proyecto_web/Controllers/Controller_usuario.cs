@@ -28,6 +28,21 @@ namespace api_proyecto_web.Controllers
             usuario.InicioSesion(email,contraseña);
         }
 
+
+        [HttpPost("Cerrar_sesion")]
+        public void CerrarSesion()
+        {
+            usuario.cerrarSesion();
+        }
+
+
+        // GET api/<Controller_usuario>/5
+        [HttpPost("CrearUsuario")]
+        public void CrearUsuario(string nombnre, string apellidos, string telefono, string email, string direccion, string comuna, string contraseña)
+        {
+            usuario.CrearUsuario( nombnre,  apellidos,  telefono,  email,  direccion,  comuna,  contraseña);
+        }
+
         // PUT api/<Controller_usuario>/5
         [HttpPut("CambioContraseña")]
         public void Put(string contraseña_antigua, string contraseña)
@@ -35,10 +50,12 @@ namespace api_proyecto_web.Controllers
             usuario.CambiarContraseña(contraseña_antigua, contraseña);
         }
 
-        // DELETE api/<Controller_usuario>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPut("EditarInformacion")]
+        public void EditarUsuario(string nombre, string apellido, string telefono, string email, string direccion, string comuna)
         {
+            usuario.EditarUsuario(nombre, apellido, telefono, email, direccion, comuna);
         }
+
+        
     }
 }
