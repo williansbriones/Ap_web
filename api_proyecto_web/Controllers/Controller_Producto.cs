@@ -1,83 +1,38 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using api_proyecto_web.Servicios.Implementacion;
+using api_proyecto_web.Servicios;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using api_proyecto_web.Modelos;
+using api_proyecto_web.Modelos.@enum;
 
 namespace api_proyecto_web.Controllers
 {
-    public class Controller_Producto : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class Controller_Producto : ControllerBase
     {
-        // GET: Controller_Producto
-        public ActionResult Index()
+        IcrudProductos servicioProducto = new ProductoServicios();
+        [HttpGet("informacionProducto")]
+        public Productos GetProducto(int id)
         {
-            return View();
+            return servicioProducto.InformacionProducto(id);
         }
 
-        // GET: Controller_Producto/Details/5
-        public ActionResult Details(int id)
+
+        [HttpPost("GenerarProducto")]
+        public void PostProducto(Tipo_Producto tipo_Producto, string nombre, string caracteristicas, int precio,Boolean estado)
         {
-            return View();
+            servicioProducto.GenerarProducto(tipo_Producto, nombre, caracteristicas, precio,estado);
         }
 
-        // GET: Controller_Producto/Create
-        public ActionResult Create()
+
+
+        [HttpDelete("Eliminar producto")]
+        public void Delete(int id)
         {
-            return View();
+
         }
 
-        // POST: Controller_Producto/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Controller_Producto/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Controller_Producto/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Controller_Producto/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Controller_Producto/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
+

@@ -7,5 +7,6 @@ namespace api_proyecto_web.Servicios
         public void CambiarContraseña(string constraseña_antigua, string Contraseña);
         public Usuario informacionUsuario();
         public void InicioSesion(string correo, string contraseña);
+
     }
 }
