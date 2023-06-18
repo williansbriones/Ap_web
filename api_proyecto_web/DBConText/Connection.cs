@@ -13,7 +13,7 @@ namespace api_proyecto_web.DBConText
             connection_str = constructor.GetSection("ConnectionStrings:azure").Value;
         }
 
-        public  DataTable Execute(string query)
+        public  DataTable Execute(string query, var parametros)
         {
             using(var sql = new SqlConnection(connection_str))
             {
@@ -43,5 +43,14 @@ namespace api_proyecto_web.DBConText
               
         }
 
+        internal DataTable Execute(string query, object parametros)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal DataTable Execute(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
