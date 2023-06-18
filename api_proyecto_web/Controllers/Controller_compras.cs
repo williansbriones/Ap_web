@@ -7,49 +7,57 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace api_proyecto_web.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class Controller_compras : ControllerBase
     {
         IcrudCompras<compras> servicio_compras = new ComprasServicios();
-
-        //get
+        //GET api/Controller_compras/CarroDeCompra
+        [HttpGet("CarroDeCompra")]
+        public compras CarrodeCompra()
+        {
+            return servicio_compras.BusquedaCarroCompras();
+        }
+        //GET api/Controller_compras/OrdenesDeCompraClienteIniciado
         [HttpGet("OrdenesDeCompraClienteIniciado")]
         public IList<compras> ComprasDeUsuariosIniciado()
         {
             return servicio_compras.BusquedaComprasClienteIniciado();
         }
-        // GET api/Ordenes_de_compra/id_compta
+        // GET api/Controller_compras/Ordenes_de_compra/{id_compra}
         [HttpGet("Ordenes_de_compra/{id_compra}")]//consulta de las ordenes de compra individuales
         public compras GetIndividual(int id_compra)
         {
             return servicio_compras.BusquedaCompraIndividual(id_compra);
         }
-        //GET api/Ordenes_de_cliente/id_cliente
+        //GET api/Controller_compras/Ordenes_de_clientes/{id_cliente}
         [HttpGet("Ordenes_de_clientes/{id_cliente}", Name = "GetCompras")]//Consulta de ordenes de compra por cliente
         public IList<compras> GetCompras(int id_cliente)
         {
             return servicio_compras.BusquedaComprasCliente(id_cliente);
         }
-        // POST api/<Controller_compras>
+        // POST api/Controller_compras/ingreso_Producto
         [HttpPost("ingreso_Producto")]
         
         public void Post(int id_producto, int cantidad)
         {
             servicio_compras.Agregarproducto(id_producto, cantidad);
         }
+        // POST api/Controller_compras/ConfimacionDeCompra
         [HttpPost("ConfimacionDeCompra")]
         public void ConfirmaciondeCompra() 
         {
             servicio_compras.ConfirmarCompra();
         }
+        // POST api/Controller_compras/IngresoDeCupon
         [HttpPost("IngresoDeCupon")]
         public void IngresoCuponCompra(string codigo_cupon)
         {
             servicio_compras.IngresoCupon(codigo_cupon);
         }
-        // PUT api/<Controller_compras>/5
-        [HttpPut("(EliminarProducto)")]
+        // PUT api/Controller_compras/EliminarProducto
+        [HttpPut("EliminarProducto/{id_producto}/{cantidad}")]
         public void EliminarProducto(int id_producto, int cantidad)
         {
             servicio_compras.EliminarProducto(id_producto, cantidad);

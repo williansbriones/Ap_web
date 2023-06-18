@@ -13,5 +13,6 @@ namespace api_proyecto_web.Servicios
         public void ConfirmarCompra();
         public void EliminarProducto(int id_producto, int cantidad);
         public void IngresoCupon(string codigo_cupon);
+        public T BusquedaCarroCompras();
     }
 }
