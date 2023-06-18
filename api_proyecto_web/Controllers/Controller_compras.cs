@@ -26,24 +26,33 @@ namespace api_proyecto_web.Controllers
             return servicio_compras.BusquedaCompraIndividual(id_compra);
         }
         //GET api/Ordenes_de_cliente/id_cliente
-        [HttpGet("Ordenes_de_clientes/{id_cliente}",Name ="GetCompras")]//Consulta de ordenes de compra por cliente
+        [HttpGet("Ordenes_de_clientes/{id_cliente}", Name = "GetCompras")]//Consulta de ordenes de compra por cliente
         public IList<compras> GetCompras(int id_cliente)
         {
             return servicio_compras.BusquedaComprasCliente(id_cliente);
         }
         // POST api/<Controller_compras>
         [HttpPost("ingreso_Producto")]
+        
         public void Post(int id_producto, int cantidad)
         {
             servicio_compras.Agregarproducto(id_producto, cantidad);
         }
-
+        [HttpPost("ConfimacionDeCompra")]
+        public void ConfirmaciondeCompra() 
+        {
+            servicio_compras.ConfirmarCompra();
+        }
+        [HttpPost("IngresoDeCupon")]
+        public void IngresoCuponCompra(string codigo_cupon)
+        {
+            servicio_compras.IngresoCupon(codigo_cupon);
+        }
         // PUT api/<Controller_compras>/5
         [HttpPut("(EliminarProducto)")]
         public void EliminarProducto(int id_producto, int cantidad)
         {
             servicio_compras.EliminarProducto(id_producto, cantidad);
         }
-
     }
 }

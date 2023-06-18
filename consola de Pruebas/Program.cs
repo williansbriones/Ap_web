@@ -3,13 +3,15 @@ using api_proyecto_web.Modelos;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
 using System.Drawing.Printing;
+using System.Globalization;
 
-Connection db = new Connection();
+CultureInfo provider = new CultureInfo("es-CL");
 
-var variable = new DataTable();
+DateTime fecha = DateTime.ParseExact("19/06/2023","dd/MM/yyyy", provider);
 
-string query = "SELECT NEXT VALUE FOR SQ_id_usuario as numero";
+Console.WriteLine(DateTime.Compare(DateTime.Now,fecha));
 
-variable = db.Execute(query);
-
-Console.WriteLine(variable.Rows[0]["numero"]);
+if (fecha > DateTime.Now)
+{
+    Console.WriteLine("si");
+}

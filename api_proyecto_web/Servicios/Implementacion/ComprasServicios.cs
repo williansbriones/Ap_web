@@ -3,6 +3,8 @@ using api_proyecto_web.Modelos;
 using api_proyecto_web.Modelos.@enum;
 using System;
 using System.Data;
+using System.Drawing.Printing;
+using System.Globalization;
 using System.Transactions;
 
 namespace api_proyecto_web.Servicios.Implementacion
@@ -65,7 +67,6 @@ namespace api_proyecto_web.Servicios.Implementacion
             }
             return listaCompras;
         }
-
         compras IcrudCompras<compras>.BusquedaCompraIndividual(int id_compra)//metodo para obtener una compra en especifico
         {
             IList<Productos> ListaProductos = new List<Productos>();
@@ -108,7 +109,6 @@ namespace api_proyecto_web.Servicios.Implementacion
             }
             return CompraIndividual;
         }
-
         public IList<compras> BusquedaComprasClienteIniciado()
         {
 
@@ -164,7 +164,6 @@ namespace api_proyecto_web.Servicios.Implementacion
 
             return listaCompras;
         }
-
         public void Agregarproducto(int id_producto, int cantidad)
         {
 
@@ -249,6 +248,8 @@ namespace api_proyecto_web.Servicios.Implementacion
 
                     string QueryActualizacionPorductos = "UPDATE detalle_compra set sub_total = "+ precio * CarroDeCompra.lista_productos[indice].cantidad + ", cantidad = " + CarroDeCompra.lista_productos[indice].cantidad + " where id_compra = "+ CarroDeCompra.id_compra + " and id_producto = "+ id_producto;
                     DataTable dt = db.Execute(QueryActualizacionPorductos);
+                    string QueryActualizacionCompra = "begin tran UPDATE COMPRA set descuento = "+CarroDeCompra.Descuento +" , total = "+CarroDeCompra.Total+" where id_compra = "+CarroDeCompra.id_compra+" commit tran";
+                    db.Execute(QueryActualizacionCompra);
                 }
             }
             catch
@@ -265,18 +266,14 @@ namespace api_proyecto_web.Servicios.Implementacion
 
                 string QueryIngresoDetalle = "INSERT INTO detalle_compra VALUES ( "+CarroDeCompra.id_compra + ", "+ Convert.ToInt32(dt_Producto_ingreso.Rows[0]["id_producto"]) + " , "+ cantidad+ " , "+(cantidad * Convert.ToInt32(dt_Producto_ingreso.Rows[0]["precio"])) +" )";
                 DataTable dt = db.Execute(QueryIngresoDetalle);
+
+                string QueryActualizacionCompra = "begin tran UPDATE COMPRA set descuento = " + CarroDeCompra.Descuento + " , total = " + CarroDeCompra.Total + " where id_compra = " + CarroDeCompra.id_compra + " commit tran";
+                db.Execute(QueryActualizacionCompra);
             }
                 
         }
-
-        public void ConfirmarCompra()
-        {
-            throw new NotImplementedException();
-        }
-
         public void EliminarProducto(int id_producto, int cantidad)
         {
-
             string Query_Ingresar_producto = "select id_producto as id_producto, id_tipo_producto as id_tipo_producto, nombre as nombre, caracteristicas as caracteristicas, precio as precio from Producto where id_producto = " + id_producto;
             DataTable dt_Producto_ingreso = db.Execute(Query_Ingresar_producto);
             int indice;
@@ -297,7 +294,6 @@ namespace api_proyecto_web.Servicios.Implementacion
             DataTable dt_obtencion_producto = db.Execute(Query_obtencion_productos);
             if (dt_obtencion_producto.Rows.Count > 0)
             {
-
                 CarroDeCompra.lista_productos = (from DataRow dr in dt_obtencion_producto.Rows
                                                  where Convert.ToInt32(dr["id_compra"]) == CarroDeCompra.id_compra
                                                  select new Productos()
@@ -310,9 +306,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                                                      precio = Convert.ToInt32(dr["precio"])
                                                  }
                                                 ).ToList();
-
             }
-
             try
             {
                 if (dt_Producto_ingreso.Rows.Count > 0)
@@ -337,12 +331,16 @@ namespace api_proyecto_web.Servicios.Implementacion
 
                     string QueryActualizacionPorductos = "UPDATE detalle_compra set sub_total = "+ precio * CarroDeCompra.lista_productos[indice].cantidad + ", cantidad = " + CarroDeCompra.lista_productos[indice].cantidad + " where id_compra = " + CarroDeCompra.id_compra + " and id_producto = " + id_producto;
                     DataTable dt = db.Execute(QueryActualizacionPorductos);
+                    string QueryActualizacionCompra = "begin tran UPDATE COMPRA set descuento = " + CarroDeCompra.Descuento + " , total = " + CarroDeCompra.Total + " where id_compra = " + CarroDeCompra.id_compra + " commit tran;";
+                    db.Execute(QueryActualizacionCompra);
                     }
                     else
                     {
                         string query = "delete from detalle_compra where id_compra = " + CarroDeCompra.id_compra + " and id_producto = " + id_producto;
                         db.Execute(query);
                         CarroDeCompra.lista_productos.RemoveAt(indice);
+                        string QueryActualizacionCompra = "begin tran UPDATE COMPRA set descuento = " + CarroDeCompra.Descuento + " , total = " + CarroDeCompra.Total + " where id_compra = " + CarroDeCompra.id_compra + " commit tran;";
+                        db.Execute(QueryActualizacionCompra);
                     }
                 }
             }catch (Exception ex) 
@@ -354,6 +352,82 @@ namespace api_proyecto_web.Servicios.Implementacion
 
 
 
+        }
+        public void ConfirmarCompra()
+        {
+            DateTime fechaActual = DateTime.Now;
+            DateTime fechaEntrega = fechaActual.AddDays(3);
+
+            fechaActual.ToString("dd/MM/yyyy");
+            fechaEntrega.ToString("dd/MM/yyyy");
+            if(CarroDeCompra.id_compra != 0 & UsuarioServicio.UsuarioIniciado.Direccion != "" & UsuarioServicio.UsuarioIniciado.Id != 0 & CarroDeCompra.lista_productos.Count > 0 & UsuarioServicio.UsuarioIniciado.Comuna != "" & UsuarioServicio.UsuarioIniciado.Email != "" & UsuarioServicio.UsuarioIniciado.telefono != "")
+            {
+                string QueryIngresoDelivery = "BEGIN TRAN Insert into delivery values (NEXT VALUE FOR SQ_id_delivery, "+CarroDeCompra.id_compra +", 'Diego Diaz','"+UsuarioServicio.UsuarioIniciado.Direccion+"',convert(date , ' "+ fechaActual.ToString("dd/MM/yyyy")+ " ',103), convert(date , ' "+fechaEntrega.ToString("dd/MM/yyyy")+ " ',103)) COMMIT TRAN";
+                string QueryActulizacionCompra = "begin tran UPDATE compra set id_estado_compra = 2 where id_compra = "+CarroDeCompra.id_compra +" commit tran";
+                db.Execute(QueryIngresoDelivery);
+                db.Execute(QueryActulizacionCompra);
+            }
+            else
+            {
+                if (CarroDeCompra.id_compra != 0)
+                {
+                    Console.WriteLine("No hay compra registrada");
+                }
+                else if (UsuarioServicio.UsuarioIniciado.Direccion != "")
+                {
+                    Console.WriteLine("No tiene direccion registrada");
+                } else if (UsuarioServicio.UsuarioIniciado.Id != 0)
+                {
+                    Console.WriteLine("No hay usuario registrado a la compra");
+                } else if (CarroDeCompra.lista_productos.Count > 0)
+                {
+                    Console.WriteLine("No hay productos asociadoa al carro de compra");
+                } else if (UsuarioServicio.UsuarioIniciado.Comuna != "" || UsuarioServicio.UsuarioIniciado.Email != "" || UsuarioServicio.UsuarioIniciado.telefono != "")
+                {
+                    Console.WriteLine("La informacion de usuario es incorrecta");
+                }
+            }
+        }
+
+        public void IngresoCupon(string codigo_cupon)
+        {
+            try 
+            { 
+                string Query = "select id_cupon as id_cupon, estado as estado, nombre as nombre, codigo as codigo, cant_uso as cantidad, convert(varchar,fecha_compra,103) as fecha_compra, convert(varchar,fecha_entrega,103) as fecha_entrega from cupon where codigo = '" + codigo_cupon+"'";
+                DataTable dt = new DataTable();
+                dt = db.Execute(Query);
+                CultureInfo provider = new CultureInfo("es-CL");
+                DateTime fecha_expira = DateTime.ParseExact(dt.Rows[0]["fecha_entrega"].ToString(), "dd/MM/yyyy", provider);
+                int cantidad_uso;
+
+                if (dt.Rows[0]["estado"].ToString() == "T" & fecha_expira > DateTime.Now & Convert.ToInt32(dt.Rows[0]["cantidad"]) > 0 & CarroDeCompra.cupon.Id == 0)
+                {
+                    CarroDeCompra.cupon = new Cupon
+                    {
+                        Id = Convert.ToInt32(dt.Rows[0]["id_cupon"]),
+                        Nombre = dt.Rows[0]["nombre"].ToString(),
+                        Codigo = dt.Rows[0]["codigo"].ToString(),
+                        CantidadDesuento = Convert.ToInt32(dt.Rows[0]["cantidad"]),
+                        FechaInicio = fecha_expira,
+                        FechaTermino = DateTime.ParseExact(dt.Rows[0]["fecha_entrega"].ToString(), "dd/MM/yyyy", provider)
+                    };
+                    int descuento = CarroDeCompra.Descuento;
+                    cantidad_uso =Convert.ToInt32(dt.Rows[0]["cantidad"]) -1;
+                    string QueryIngresoCupon = "begin tran update compra set id_cupon = " + CarroDeCompra.cupon.Id + " where id_compra = " + CarroDeCompra.id_compra+" commit tran";
+                    db.Execute(QueryIngresoCupon);
+                    string ingreso_desciento = "begin tran update compra set descuento = " + descuento + " where id_compra = " + CarroDeCompra.id_compra + " commit tran";
+                    db.Execute(ingreso_desciento);
+                    string QueryActualizacionCompra = "begin tran update cupon set cant_uso = "+ cantidad_uso + " where id_cupon = "+ Convert.ToInt32(dt.Rows[0]["id_cupon"]) + " commit tran";
+                    db.Execute(QueryActualizacionCompra);
+                }
+                else
+                {
+                    Console.WriteLine("Cupon no valido");
+                }
+            }catch (Exception ex)
+            {
+                Console.WriteLine("Cupon no valido");
+            }
         }
     }
 }

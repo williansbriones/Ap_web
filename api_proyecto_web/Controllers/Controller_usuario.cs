@@ -23,6 +23,7 @@ namespace api_proyecto_web.Controllers
 
         // GET api/<Controller_usuario>/5
         [HttpPost("Inicio_Sesion")]
+        
         public void Post( string email, string contraseña)
         {
             usuario.InicioSesion(email,contraseña);
@@ -30,6 +31,7 @@ namespace api_proyecto_web.Controllers
 
 
         [HttpPost("Cerrar_sesion")]
+        
         public void CerrarSesion()
         {
             usuario.cerrarSesion();
@@ -38,6 +40,7 @@ namespace api_proyecto_web.Controllers
 
         // GET api/<Controller_usuario>/5
         [HttpPost("CrearUsuario")]
+        
         public void CrearUsuario(string nombnre, string apellidos, string telefono, string email, string direccion, string comuna, string contraseña)
         {
             usuario.CrearUsuario( nombnre,  apellidos,  telefono,  email,  direccion,  comuna,  contraseña);
