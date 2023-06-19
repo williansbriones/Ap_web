@@ -4,15 +4,18 @@
     "C:\\Users\\willi\\Desktop\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\willi\\Desktop\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
+    "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\willi\\Desktop\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
+        "projectUniqueName": "C:\\Users\\MR ESCUICHI\\Desktop\\webapi1.1\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
         "projectName": "api_proyecto_web",
         "projectPath": "C:\\Users\\willi\\Desktop\\Api_web\\api_proyecto_web\\api_proyecto_web.csproj",
         "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\willi\\Desktop\\Api_web\\api_proyecto_web\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -22,6 +25,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
