@@ -20,7 +20,7 @@ namespace api_proyecto_web.Controllers
 
 
         [HttpPost("GenerarProducto")]
-        public void PostProducto(Tipo_Producto tipo_Producto, string nombre, string caracteristicas, int precio,Boolean estado)
+        public void PostProducto(int tipo_Producto, string nombre, string caracteristicas, int precio,Boolean estado)
         {
             servicioProducto.GenerarProducto(tipo_Producto, nombre, caracteristicas, precio,estado);
         }
