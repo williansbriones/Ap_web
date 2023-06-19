@@ -17,9 +17,9 @@ namespace api_proyecto_web.Controllers
         
 
         [HttpPost ("GenerarAyuda")]
-       public void Post(string email, string descripcion,string fecha_ingreso)
+       public void Post(string email, string descripcion)
         {
-            servicioAyuda.GenerarAyuda(email,descripcion, fecha_ingreso);
+            servicioAyuda.GenerarAyuda(email,descripcion);
 
         }
 

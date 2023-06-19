@@ -404,7 +404,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                 DateTime fecha_expira = DateTime.ParseExact(dt.Rows[0]["fecha_entrega"].ToString(), "dd/MM/yyyy", provider);
                 int cantidad_uso;
                 //validador de que el cupon se encuentre activo 
-                if (dt.Rows[0]["estado"].ToString() == "T" & fecha_expira > DateTime.Now & Convert.ToInt32(dt.Rows[0]["cantidad"]) > 0 & CarroDeCompra.cupon.Id != 0)
+                if (dt.Rows[0]["estado"].ToString() == "T" & fecha_expira > DateTime.Now & Convert.ToInt32(dt.Rows[0]["cantidad"]) > 0)
                 {
                     CarroDeCompra.cupon = new Cupon //ingreso de la informacion del cupon para el carro de compras
                     {

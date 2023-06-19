@@ -11,10 +11,10 @@ namespace api_proyecto_web.Servicios.Implementacion
         static DBConText.Connection db = new DBConText.Connection();
         static Ayuda Ayuda1 = new Ayuda();
 
-        public void GenerarAyuda(string email, string descripcion, string fecha_ingreso)
+        public void GenerarAyuda(string email, string descripcion)
         {
             Ayuda ayudita = new Ayuda();
-            string Query = string.Format("BEGIN TRAN insert into ayuda values (next value for id_ayuda,'"+email+"','"+descripcion+"','"+fecha_ingreso +"') COMMIT TRAN");
+            string Query = string.Format("BEGIN TRAN insert into ayuda values (next value for id_ayuda,'"+email+"','"+descripcion+"',convert(date,'"+ DateTime.Now.ToString("dd/MM/yyyy") +"',103)) COMMIT TRAN");
             DataTable dt1 = db.Execute(Query);
   
 

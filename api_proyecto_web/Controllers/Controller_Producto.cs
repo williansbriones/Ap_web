@@ -25,14 +25,6 @@ namespace api_proyecto_web.Controllers
             servicioProducto.GenerarProducto(tipo_Producto, nombre, caracteristicas, precio,estado);
         }
 
-
-
-        [HttpDelete("Eliminar producto")]
-        public void Delete(int id)
-        {
-
-        }
-
     }
 }
 

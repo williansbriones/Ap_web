@@ -14,23 +14,9 @@ namespace api_proyecto_web.Controllers
         IcrudCupon CuponServicios = new CuponServicios();
 
 
-        //devuelve informacion 
-        // GET: api/<Controller_Cupon>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-        //devuelve informacion 
-        // GET api/<Controller_Cupon>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
         //crear recursos
         // POST api/<Controller_Cupon>
-        [HttpPost("crear_cupon ")]
+        [HttpPost("crear_cupon")]
         public void Post(string Nombre, int CantidadDesuento, string Codigo, int Cantidad_limite, string FechaInicio, string FechaTermino)
         {
             CuponServicios.Crearcupon(Nombre, CantidadDesuento, Codigo, Cantidad_limite, FechaInicio, FechaTermino);

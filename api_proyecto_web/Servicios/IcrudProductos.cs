@@ -11,10 +11,5 @@ namespace api_proyecto_web.Servicios
         //GET 
         public Productos InformacionProducto(int id);
         
-        //DELETE
-        public void EliminarProducto(int Id);
-
-        
-        
     }
 }

@@ -17,16 +17,6 @@ namespace api_proyecto_web.Servicios.Implementacion
             db = new Connection();
         }
 
-        public void EliminarProducto(int id)
-        {
-            string query1 = string.Format("BEGIN TRAN DELETE from producto WHERE id_producto=" +id)+"COMMIT TRAN";
-            DataTable dt1 = db.Execute(query1);
-            dt1 = db.Execute("COMMIT");
-
-        }
-        
-        
-
         public void GenerarProducto(int id_tipo_Producto, string nombre, string caracteristicas, int precio,bool estado )
         {
             Productos productito = new Productos();
@@ -41,7 +31,7 @@ namespace api_proyecto_web.Servicios.Implementacion
                 productito.nombre = dt1.Rows[0]["nombre"].ToString();
                 productito.caracteristicas = dt1.Rows[0]["caracteristicas"].ToString();
                 productito.precio = Convert.ToInt32(precio);
-                productito.estado = true;
+                productito.estado = dt1.Rows[0]["estado"].ToString() == "T" ? true : false;
                 
                 
             }
@@ -55,8 +45,9 @@ namespace api_proyecto_web.Servicios.Implementacion
             produc.Id = Convert.ToInt32(dt1.Rows[0]["id_producto"]) ;
             produc.nombre = dt1.Rows[0]["Nombre"].ToString();
             produc.caracteristicas = dt1.Rows[0]["caracteristicas"].ToString();
-            produc.precio = Convert.ToInt32(dt1.Rows[0]["id_tipo_producto"]);
-            produc.estado = true;
+            produc.precio = Convert.ToInt32(dt1.Rows[0]["precio"]);
+            produc.estado = dt1.Rows[0]["estado"].ToString() == "T"? true : false;
+            produc.tipo_producto = (Tipo_Producto)Convert.ToInt32(dt1.Rows[0]["id_tipo_producto"]);
             return produc;
             
         }

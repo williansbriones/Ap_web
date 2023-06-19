@@ -7,7 +7,7 @@ namespace api_proyecto_web.Servicios
 
     public interface IcrudAyuda
     {
-        public void GenerarAyuda(string email, string descripcion,string fecha_ingreso);
+        public void GenerarAyuda(string email, string descripcion);
 
 
 
