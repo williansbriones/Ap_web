@@ -1,38 +1,41 @@
-﻿using api_proyecto_web.Modelos;
+﻿using api_proyecto_web.DBConText;
+using api_proyecto_web.Modelos;
+using api_proyecto_web.Modelos.@enum;
+using System.Data;
 
 
 namespace api_proyecto_web.Servicios.Implementacion
 {
     public class AyudaServicio : IcrudAyuda
     {
+        static DBConText.Connection db = new DBConText.Connection();
         static Ayuda Ayuda1 = new Ayuda();
-
-        public AyudaServicio()
-        {
-            if (Ayuda1.email == String.Empty)
-            {
-                Ayuda1.email = "daniloki10@gmail.com";
-                Ayuda1.descripcion = "Hola, este es un test de prueba";
-            }
-
-
-
-
-
-        }
 
         public void GenerarAyuda(string email, string descripcion, string fecha_ingreso)
         {
-            throw new NotImplementedException();
+            Ayuda ayudita = new Ayuda();
+            string Query = string.Format("BEGIN TRAN insert into ayuda values (next value for id_ayuda,'"+email+"','"+descripcion+"','"+fecha_ingreso +"') COMMIT TRAN");
+            DataTable dt1 = db.Execute(Query);
+  
+
+            if (dt1.Rows.Count > 0)
+            {
+                ayudita.email = dt1.Rows[0]["correo"].ToString();
+                ayudita.descripcion = dt1.Rows[0]["Descripcion"].ToString();
+                ayudita.fecha_ingreso = dt1.Rows[0]["fecha_ingreso"].ToString();
+                
+                
+            }
         }
 
-        public void generar_Solicitud(string email, string descripcion)
-        {
-            Ayuda1.email = email;
-            Ayuda1.descripcion = descripcion;
 
+            
         }
 
 
+        
     }
-}
+
+
+
+
