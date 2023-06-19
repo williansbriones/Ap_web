@@ -1,66 +1,43 @@
-﻿using api_proyecto_web.Modelos;
+﻿using api_proyecto_web.DBConText;
+using api_proyecto_web.Modelos;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace api_proyecto_web.Servicios.Implementacion
 {
     public class CuponServicios : IcrudCupon
     {
-        //Coneccion BD
-        static DBConText.Connection db = new DBConText.Connection();
-        private object delete;
+        Connection db = new Connection();
 
-        public CuponServicios()
-        {
-            db = new DBConText.Connection();
-        }
-
-        //credenciales para realizar la consulta en la base de datos
         public void Crearcupon(string Nombre, int CantidadDesuento, string Codigo, int Cantidad_limite, string FechaInicio, string FechaTermino)
         {
-            String query = "insert  into cupon VALUES (SQ_IDcupon.NEXTVAL,'T',"+CantidadDesuento+",'" + Nombre + "','"+ Codigo+"',"+ Cantidad_limite+",'" + FechaInicio+"','"+ FechaTermino + "')";
-            DataTable dt = db.Execute(query);
-
-            dt = db.Execute("commit");
-        }
-
-        public void Des_Habilitar()
-        {
-            throw new NotImplementedException();
+            string query = " BEGIN TRAN insert into cupon values (next value for SQ_IDcupon,'T'," + CantidadDesuento + ",'" + Nombre + "','" + Codigo + "'," + Cantidad_limite + ", CONVERT(DATE, '" + FechaInicio + "',103),CONVERT(DATE, '" + FechaTermino + "',103)) COMMIT TRAN";
+            db.Execute(query);
         }
 
         public void Des_Habilitar(int id_cupon)
         {
-            throw new NotImplementedException();
+            string query = " BEGIN TRAN update cupon set estado = 'F' WHERE  id_cupon = " + id_cupon + "commit tran";
+            db.Execute(query);
         }
 
-        public void Eliminarcupon(int id_cupon)
+        public void Eliminar_cupon(int id_cupon)
         {
-            throw new NotImplementedException();
+            string query = "  BEGIN TRAN DELETE FROM cupon WHERE id_cupon = " + id_cupon + "commit tran";
+            db.Execute(query);
         }
 
-        public void Modificarcupon(int id_cupon, string Nombre, int CantidadDesuento, string Codigo, int Cantidad_limite, string FechaInicio, string FechaTermino)
+        public void Habilitar_cupon(int id_cupon)
         {
-            string query = "UPDATE cupon SET Nombre = :Nombre, CantidadDesuento = :CantidadDesuento, Codigo = :Codigo, Cantidad_limite = :Cantidad_limite, FechaInicio = :FechaInicio, FechaTermino = :FechaTermino WHERE id_cupon = :id_cupon";
-
-            // Agregar los parámetros y sus valores correspondientes
-            var parametros = new Dictionary<string, object>//corregir
-           {
-            { "Nombre", Nombre },
-            { "CantidadDesuento", CantidadDesuento },
-            { "Codigo", Codigo },
-            { "Cantidad_limite", Cantidad_limite },
-            { "FechaInicio", FechaInicio },
-            { "FechaTermino", FechaTermino },
-            { "id_cupon", id_cupon }
-           };
-
-            // Ejecutar la consulta
-            DataTable dt = db.Execute(query);
-
-            dt = db.Execute("commit");
+            string query = " BEGIN TRAN update cupon set estado = 'F' WHERE  id_cupon = " + id_cupon + "commit tran";
+            db.Execute(query);
         }
+        public void Modificarcupon(int id_cupon, string Nombre, int CantidadDesuento, string Codigo, int Cantidad_limite)
+        {
+            string query = " BEGIN TRAN UPDATE cupon SET cupon = '" + Nombre + "'," + CantidadDesuento + ",'" + Codigo + "'," + Cantidad_limite + " COMMIT TRAN ";
 
-
+            db.Execute(query);
+        }
 
     }
 }
