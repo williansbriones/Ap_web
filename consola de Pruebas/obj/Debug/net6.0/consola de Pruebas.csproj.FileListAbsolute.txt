@@ -55,3 +55,11 @@ C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\win-
 C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
 C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\willi\Desktop\Api_web\consola de Pruebas\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\danil\Desktop\api_web\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.csproj.AssemblyReference.cache
+C:\Users\danil\Desktop\api_web\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danil\Desktop\api_web\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.AssemblyInfoInputs.cache
+C:\Users\danil\Desktop\api_web\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.AssemblyInfo.cs
+C:\Users\danil\Desktop\api_web\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.csproj.CoreCompileInputs.cache
+C:\Users\danil\Desktop\api_web\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.dll
+C:\Users\danil\Desktop\api_web\Api_web\consola de Pruebas\obj\Debug\net6.0\refint\consola de Pruebas.dll
+C:\Users\danil\Desktop\api_web\Api_web\consola de Pruebas\obj\Debug\net6.0\consola de Pruebas.pdb
